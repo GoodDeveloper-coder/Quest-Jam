@@ -7,20 +7,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpeed;
 
     private Rigidbody2D rigidBody;
+    private Vector2 origin;
     private Vector2 startPosition;
     private bool moving;
+    private bool locked;
     
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        startPosition = rigidBody.position;
+        origin = rigidBody.position;
+        startPosition = origin;
+        locked = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (moving) return;
+        if (moving || locked) return;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Collider2D collider = Physics2D.OverlapBox(rigidBody.position + Vector2.up, Vector2.one / 2, 0);
@@ -49,6 +53,21 @@ public class PlayerMovement : MonoBehaviour
         //StopAllCoroutines();
         //rigidBody.MovePosition(startPosition);
         //moving = false;
+    }
+
+    public void SetLocked(bool l)
+    {
+        locked = l;
+        if (l)
+        {
+            StopAllCoroutines();
+            moving = false;
+        }
+    }
+
+    public void ResetPosition()
+    {
+        rigidBody.position = origin;
     }
 
     private IEnumerator Move(int direction)

@@ -20,9 +20,9 @@ public class GhostMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (path == null) return;
+        if (path == null || !moving) return;
         transform.position += Vector3.MoveTowards(transform.position, target, movementSpeed * Time.deltaTime);
-        if ((transform.position - target).magnitude < 0.1f)
+        if ((transform.position - target).magnitude <= float.Epsilon)
         {
             transform.position = new Vector3(target.x, target.y, transform.position.z);
             pathIndex = (pathIndex + 1) % path.Length;
@@ -38,6 +38,7 @@ public class GhostMovement : MonoBehaviour
 
     public void SetMoving(bool m)
     {
-        moving = m;
+        //moving = m;
+        //if (m) pathIndex = 1;
     }
 }
