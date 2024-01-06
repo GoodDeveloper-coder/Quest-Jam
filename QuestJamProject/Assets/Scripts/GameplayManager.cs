@@ -16,6 +16,7 @@ public class GameplayManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (ghosts == null) return;
         ghosts = new GameObject[10];
         Vector2[] positions = new Vector2[(mapWidth + mapHeight - 1) * 2];
         bool[] occupied = new bool[positions.Length];
