@@ -9,6 +9,8 @@ public class VacumCleaner : MonoBehaviour
 
     [SerializeField] private GameManager _gameManager;
 
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+
     [SerializeField] ParticleSystem _particleSystem;
 
     [SerializeField] bool _ghostInZone;
@@ -19,11 +21,17 @@ public class VacumCleaner : MonoBehaviour
 
     [SerializeField] private float attackCooldown;
 
-    private float GroundCheckRadius = 0.9749961f;
+    private GameObject _player;
+
+    private float GroundCheckRadius = 1.7f;
 
     private bool _canAttack = true;
     #endregion
     #region Monobehaviour Functions
+    private void Start()
+    {
+        _player = transform.parent.gameObject;
+    }
 
     void Update()
     {
@@ -33,6 +41,7 @@ public class VacumCleaner : MonoBehaviour
         {
             Attack();
         }
+        else _spriteRenderer.enabled = false;
 
         if (Input.GetMouseButtonDown(0)) _particleSystem.Play(); else _particleSystem.Stop();
     }
@@ -41,7 +50,7 @@ public class VacumCleaner : MonoBehaviour
     void Attack()
     {
         _ghostInZone = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
-
+        _spriteRenderer.enabled = true;
         if (_ghostInZone)
         {
             if (_canAttack)
@@ -50,12 +59,28 @@ public class VacumCleaner : MonoBehaviour
                 {
                     if (collider.CompareTag("Enemy"))
                     {
-                        _gameManager.AddScore(5);
-                        Destroy(collider.gameObject);
+                        Ghost ghostScript = collider.GetComponent<Ghost>();
+                        if (ghostScript != null)
+                        {
+                            ghostScript.SetGhostFields(transform);
+                        }
                     }
                 }
 
                 StartCoroutine(AttackCooldown());
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Ghost ghost = collision.transform.GetComponent<Ghost>();
+        if (ghost != null)
+        {
+            if (ghost._canMove == false)
+            {
+                Destroy(ghost.gameObject);
+                _gameManager.AddScore(5);
             }
         }
     }
