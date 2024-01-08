@@ -52,11 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        _moveVector.x = _moveInputX.action.ReadValue<float>();
-        _moveVector.y = _moveInputY.action.ReadValue<float>();
-
-        //Move(walkSpeed);
-
         if (locked) return;
         if (catchingGhost)
         {
@@ -102,6 +97,13 @@ public class PlayerMovement : MonoBehaviour
             }
             if (closestGhost != null) StartCoroutine(CatchGhost(closestGhost));
         }
+
+        _moveVector.x = _moveInputX.action.ReadValue<float>();
+        _moveVector.y = _moveInputY.action.ReadValue<float>();
+
+        Move(walkSpeed);
+
+        /*
         if (moving) return;
         if (Mathf.Abs(_moveVector.x) > Mathf.Abs(_moveVector.y))
         {
@@ -137,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
                 if (!wall) StartCoroutine(IMove(3));
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             direction = 0;
             SetVacuum();
@@ -158,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
             SetVacuum();
         }
         pMoveVector = _moveVector;
+        */
 
         Reflect();
         /*

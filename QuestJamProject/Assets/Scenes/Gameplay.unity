@@ -7252,7 +7252,7 @@ MonoBehaviour:
   _footSteps: []
   minTimeBetweenFootsteps: 0.3
   maxTimeBetweenFootsteps: 0.6
-  walkSpeed: 30
+  walkSpeed: 5
   vacuumSprites:
   - {fileID: 992869001}
   - {fileID: 270408611}
