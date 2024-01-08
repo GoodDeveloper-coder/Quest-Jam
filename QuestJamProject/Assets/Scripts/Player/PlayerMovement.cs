@@ -272,10 +272,11 @@ public class PlayerMovement : MonoBehaviour
             ghost.transform.position = Vector3.MoveTowards(ghost.transform.position, transform.position, suckSpeed * Time.deltaTime);
             float beamLength = (ghost.transform.position - transform.position).magnitude;
             vacuumBeamSprite.transform.localScale = Vector3.right * (direction % 2 == 0 ? beamLength : 0.2f) + Vector3.up * (direction % 2 == 0 ? 0.2f : beamLength) + Vector3.forward;
-            vacuumBeamSprite.transform.position = transform.position + Vector3.right * (direction == 0 ? (beamLength - 1) / 2f : direction == 2 ? (1 - beamLength) / 2f : 0) + Vector3.up * (direction == 1 ? (beamLength - 1) / 2f : direction == 3 ? (1 - beamLength) / 2f : -0.2f);
+            vacuumBeamSprite.transform.position = transform.position + Vector3.right * (direction == 0 ? beamLength / 2f : direction == 2 ? -beamLength / 2f : 0) + Vector3.up * (direction == 1 ? beamLength / 2f : direction == 3 ? -beamLength / 2f : -0.2f);
             distance = (ghost.transform.position - transform.position).sqrMagnitude;
             yield return null;
         }
+        SetVacuum();
         ghost.SetCaught(true);
         List<GhostMovement> ghostList = new List<GhostMovement>(ghostsCaught);
         ghostList.Add(ghost);
