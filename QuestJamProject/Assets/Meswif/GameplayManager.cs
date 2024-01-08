@@ -15,7 +15,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textGhostsPerCycle;
     [SerializeField] private TextMeshProUGUI textFinalScore;
     
-    [SerializeField] private PlayerMovement player;
+    [SerializeField] private PlayerMovement2 player;
 
     [SerializeField] private int mapWidth;
     [SerializeField] private int mapHeight;
