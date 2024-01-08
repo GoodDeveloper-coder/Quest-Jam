@@ -9,7 +9,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private GameObject panelResetCycle;
     [SerializeField] private GameObject panelScore;
 
-    [SerializeField] private TextMeshProUGUI textTimeLeft;
+    [SerializeField] private GameObject[] timer;
+
     [SerializeField] private TextMeshProUGUI textTotalTime;
     [SerializeField] private TextMeshProUGUI textGhostsPerCycle;
     [SerializeField] private TextMeshProUGUI textFinalScore;
@@ -23,12 +24,13 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private float secondsInCycle;
     [SerializeField] private float secondsToResetCycle;
 
-    [SerializeField] private GameObject ghostPrefab;
+    [SerializeField] private GameObject[] ghostPrefabs;
 
     private GhostMovement[] ghosts;
 
     private bool ticking;
     private float elapsedSeconds;
+    private int[] ghostsCaughtPerColour;
     private int totalGhostsCaught;
     private int cycles;
     private float finalScore;
@@ -38,7 +40,7 @@ public class GameplayManager : MonoBehaviour
     {
         panelResetCycle.SetActive(false);
         panelScore.SetActive(false);
-        ghosts = new GhostMovement[ghostsPerColour * 4];
+        ghosts = new GhostMovement[ghostsPerColour * ghostPrefabs.Length];
         List<Vector2> positions = new List<Vector2>();
         for (int i = -mapWidth; i <= mapWidth; i++) for (int j = -mapHeight; j <= mapHeight; j++) positions.Add(new Vector2(i, j));
         bool[] occupied = new bool[positions.Count];
@@ -53,7 +55,7 @@ public class GameplayManager : MonoBehaviour
             bool b = Random.Range(0, 2) == 0;
             int pr = (int)(b ? positions[r].x : positions[r].y);
             Vector2 currentPosition = positions[r];
-            ghosts[i] = Instantiate(ghostPrefab, transform.position + Vector3.right * currentPosition.x + Vector3.up * currentPosition.y, transform.rotation).GetComponent<GhostMovement>();
+            ghosts[i] = Instantiate(ghostPrefabs[i % ghostPrefabs.Length], transform.position + Vector3.right * currentPosition.x + Vector3.up * currentPosition.y, transform.rotation).GetComponent<GhostMovement>();
             for (int j = 0; j < 40; j++)
             {
                 Vector2 newPosition = currentPosition;
@@ -76,13 +78,38 @@ public class GameplayManager : MonoBehaviour
             ghosts[i].SetPath(path.ToArray());
             ghosts[i].SetMoving(false);
         }
-        StartCoroutine(IStartCycle());
+        ghostsCaughtPerColour = new int[ghostPrefabs.Length];
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ticking) elapsedSeconds += Time.deltaTime;
+        if (!ticking) return;
+        bool allCaught = true;
+        foreach (GhostMovement g in ghosts) allCaught &= g.GetCaught();
+        if(allCaught)
+        {
+            ticking = false;
+            player.SetLocked(true);
+            panelHUD.SetActive(false);
+            panelResetCycle.SetActive(false);
+            panelScore.SetActive(true);
+            int minutes = (int)elapsedSeconds / 60;
+            int seconds = (int)elapsedSeconds % 60;
+            float ghostsPerCycle = totalGhostsCaught * 1f / cycles;
+            finalScore = ghostsPerCycle * 10000f / elapsedSeconds;
+            textTotalTime.text = minutes + (seconds < 10 ? ":0" : ":") + seconds;
+            textGhostsPerCycle.text = (int)ghostsPerCycle + "";
+            textFinalScore.text = (int)finalScore + "";
+            return;
+        }
+        elapsedSeconds += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.R)) ResetCycle();
+    }
+
+    public void StartCycle()
+    {
+        StartCoroutine(IStartCycle());
     }
 
     public void ResetCycle()
@@ -97,7 +124,13 @@ public class GameplayManager : MonoBehaviour
         foreach (GhostMovement ghost in ghosts) ghost.SetMoving(true);
         cycles++;
         ticking = true;
-        yield return new WaitForSeconds(secondsInCycle);
+        float timeLeft = secondsInCycle;
+        while (timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            for (int i = 0; i < timer.Length; i++) timer[i].SetActive(i * 1f / timer.Length < timeLeft / secondsInCycle);
+            yield return null;
+        }
         ticking = false;
         panelResetCycle.SetActive(true);
         StartCoroutine(IResetCycle());
@@ -113,22 +146,8 @@ public class GameplayManager : MonoBehaviour
         yield return new WaitForSeconds(secondsToResetCycle);
         player.ResetPosition();
         foreach (GhostMovement ghost in ghosts) ghost.ResetPosition();
-        panelHUD.SetActive(false);
+        panelHUD.SetActive(true);
         panelResetCycle.SetActive(false);
         StartCoroutine(IStartCycle());
-    }
-
-    private void EndGame()
-    {
-        ticking = false;
-        player.SetLocked(true);
-        panelHUD.SetActive(false);
-        panelResetCycle.SetActive(false);
-        panelScore.SetActive(true);
-        float ghostsPerCycle = totalGhostsCaught * 1f / cycles;
-        finalScore = ghostsPerCycle * 10000f / elapsedSeconds;
-        textTotalTime.text = (int)elapsedSeconds + "";
-        textGhostsPerCycle.text = (int)ghostsPerCycle + "";
-        textFinalScore.text = (int)finalScore + "";
     }
 }

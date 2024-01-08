@@ -11,6 +11,8 @@ public class GhostMovement : MonoBehaviour
     private Vector3 origin;
     private Vector3 target;
     private bool moving;
+    private bool inVacuum;
+    private bool caught;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,7 @@ public class GhostMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (path == null || !moving) return;
+        if (path == null || !moving || caught) return;
         transform.position = Vector3.MoveTowards(transform.position, target, movementSpeed * Time.deltaTime);
         if ((transform.position - target).magnitude <= float.Epsilon)
         {
@@ -30,7 +32,7 @@ public class GhostMovement : MonoBehaviour
             target = Vector3.right * path[pathIndex].x + Vector3.up * path[pathIndex].y;
         }
     }
-    
+
     public void SetPath(Vector2[] p)
     {
         path = p;
@@ -46,5 +48,15 @@ public class GhostMovement : MonoBehaviour
     {
         transform.position = origin;
         pathIndex = 0;
+    }
+
+    public void SetCaught(bool c)
+    {
+        caught = c;
+    }
+
+    public bool GetCaught()
+    {
+        return caught;
     }
 }
