@@ -68,9 +68,17 @@ public class PlayerMovement : MonoBehaviour
         {
             vacuumOn = true;
             SetVacuum();
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            vacuumOn = false;
+            SetVacuum();
+        }
+        if (vacuumOn)
+        {
             float vacuumRange = 5;
             Vector2 offset = (new Vector3[]{ Vector2.right, Vector2.up, -Vector2.right, -Vector2.up })[direction] * vacuumRange / 2f;
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(_rb.position + offset, new Vector2(vacuumRange, 0.2f), 0);
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(_rb.position + offset, direction % 2 == 0 ? new Vector2(vacuumRange, 0.2f) : new Vector2(0.2f, vacuumRange), 0);
             GhostMovement closestGhost = null;
             float minDistance = 0;
             Vector3 target = Vector3.right * _rb.position.x + Vector3.up * _rb.position.y;
@@ -93,11 +101,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
             if (closestGhost != null) StartCoroutine(CatchGhost(closestGhost));
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            vacuumOn = false;
-            SetVacuum();
         }
         if (moving) return;
         if (Mathf.Abs(_moveVector.x) > Mathf.Abs(_moveVector.y))
