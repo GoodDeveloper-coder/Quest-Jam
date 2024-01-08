@@ -999,8 +999,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 00000000'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 90cd1c5389389c840b831eeda879685e, type: 2}
+  m_sharedMaterial: {fileID: 1690809027303920986, guid: 90cd1c5389389c840b831eeda879685e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1411,8 +1411,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 90cd1c5389389c840b831eeda879685e, type: 2}
+  m_sharedMaterial: {fileID: 1690809027303920986, guid: 90cd1c5389389c840b831eeda879685e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2284,6 +2284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6015713805542343186, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6015713805542343189, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2342,6 +2346,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8548593407502537997, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751031986034394177, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

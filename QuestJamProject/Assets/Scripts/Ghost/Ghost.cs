@@ -52,8 +52,7 @@ public class Ghost : MonoBehaviour
 
     void MoveToPlayer()
     {
-        StopCoroutine(Move());
-        transform.position = Vector2.MoveTowards(transform.position, _target.transform.position, 3f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 4f * Time.deltaTime);
     }
 
     public void SetGhostFields(Transform playerTransform)
