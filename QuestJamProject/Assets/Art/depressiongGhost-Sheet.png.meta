@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7ce5647a9fd27746a84ee21ec418e03
+guid: 76ae09bf81281ac4cab9fada6249e01c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,12 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_0
+      name: depressiongGhost-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be2d7bade44e9840852ec6caf154e1d
-      internalID: 127955807
+      spriteID: 5006ed76ebc8f244686312f563293ed7
+      internalID: -1896913849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_1
+      name: depressiongGhost-Sheet_1
       rect:
         serializedVersion: 2
-        x: 160
+        x: 150
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe4fd7a2ddd089649949e7fa4e011e47
-      internalID: 454302103
+      spriteID: 694c36c78c7f0ee4fa86198a5fefea75
+      internalID: 1953357640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_2
+      name: depressiongGhost-Sheet_2
       rect:
         serializedVersion: 2
-        x: 320
+        x: 300
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edb9c641825dabe429028fcdd5e22ce6
-      internalID: -456551319
+      spriteID: 21c844dca5282af499ce458985b05063
+      internalID: -1257545587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_3
+      name: depressiongGhost-Sheet_3
       rect:
         serializedVersion: 2
-        x: 480
+        x: 450
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,19 +206,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00adc88f0ad25714f8f3523c2ae9ea58
-      internalID: -1336668735
+      spriteID: dfcb8725de95c6f4cbc8e5b8aaf9db98
+      internalID: 719263762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_4
+      name: depressiongGhost-Sheet_4
       rect:
         serializedVersion: 2
-        x: 640
+        x: 600
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -227,19 +227,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9394d29c80849c144ac7788fb1b241e2
-      internalID: -827834030
+      spriteID: ef679e9de25bf2b4c955ccf2992567f7
+      internalID: -508921155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_5
+      name: depressiongGhost-Sheet_5
       rect:
         serializedVersion: 2
-        x: 800
+        x: 750
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -248,19 +248,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2e5c5d41e0f0e6419aa62d974202ec4
-      internalID: 447182393
+      spriteID: 07f1713e239101041804295edd46d430
+      internalID: -799884542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_6
+      name: depressiongGhost-Sheet_6
       rect:
         serializedVersion: 2
-        x: 960
+        x: 900
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -269,19 +269,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25332320af745fb4b917fd64eb2948a7
-      internalID: 1468659121
+      spriteID: 1383378c21af81645bb7d223367d12c5
+      internalID: 1899161981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_7
+      name: depressiongGhost-Sheet_7
       rect:
         serializedVersion: 2
-        x: 1120
+        x: 1050
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -290,19 +290,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dff91fa1380fe4f4792f0af56b944f9c
-      internalID: 1897901303
+      spriteID: b96d000378b364e4a84a8351c98eadc3
+      internalID: 794224470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_8
+      name: depressiongGhost-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1200
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -311,19 +311,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b51e5444670ab2f4c85af41fd6de0ea6
-      internalID: -875165080
+      spriteID: bd1bcb7eff18a77449447b303c7d33dc
+      internalID: 999158567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_9
+      name: depressiongGhost-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 1350
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -332,19 +332,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19b38009ad285de4687f0342178881fd
-      internalID: 660651080
+      spriteID: 1f6da8f98241c6044a3cbbc254843f87
+      internalID: -2119815692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_10
+      name: depressiongGhost-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 1500
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -353,19 +353,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dbbad18afa8684498d86ece8966be6d
-      internalID: 1218668027
+      spriteID: 78f58a58adf97ca4d94aae44cdfe4fa8
+      internalID: -306345588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_11
+      name: depressiongGhost-Sheet_11
       rect:
         serializedVersion: 2
-        x: 1760
+        x: 1650
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -374,29 +374,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 136a88b660e83b748a716d0d66e5210d
-      internalID: 491379533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 160
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a40531d5827f6945a4841158371e212
-      internalID: 1444159820
+      spriteID: 5502380394650b548828547d133671fe
+      internalID: -1168510143
       vertices: []
       indices: 
       edges: []
@@ -412,19 +391,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gamejamTimeLoop-Sheet_0: 127955807
-      gamejamTimeLoop-Sheet_1: 454302103
-      gamejamTimeLoop-Sheet_10: 1218668027
-      gamejamTimeLoop-Sheet_11: 491379533
-      gamejamTimeLoop-Sheet_12: 1444159820
-      gamejamTimeLoop-Sheet_2: -456551319
-      gamejamTimeLoop-Sheet_3: -1336668735
-      gamejamTimeLoop-Sheet_4: -827834030
-      gamejamTimeLoop-Sheet_5: 447182393
-      gamejamTimeLoop-Sheet_6: 1468659121
-      gamejamTimeLoop-Sheet_7: 1897901303
-      gamejamTimeLoop-Sheet_8: -875165080
-      gamejamTimeLoop-Sheet_9: 660651080
+      depressiongGhost-Sheet_0: -1896913849
+      depressiongGhost-Sheet_1: 1953357640
+      depressiongGhost-Sheet_10: -306345588
+      depressiongGhost-Sheet_11: -1168510143
+      depressiongGhost-Sheet_2: -1257545587
+      depressiongGhost-Sheet_3: 719263762
+      depressiongGhost-Sheet_4: -508921155
+      depressiongGhost-Sheet_5: -799884542
+      depressiongGhost-Sheet_6: 1899161981
+      depressiongGhost-Sheet_7: 794224470
+      depressiongGhost-Sheet_8: 999158567
+      depressiongGhost-Sheet_9: -2119815692
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -160,8 +160,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.7169812, g: 0.11836952, b: 0.11836952, a: 1}
+  m_Sprite: {fileID: -2099502421, guid: 5b1a3d545e00adb4d954d33ded5e6598, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,7 +199,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bd7c93c6c7464439de015d86eec60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spriteRenderer: {fileID: 4846807350541597683}
+  _typeOfGhosts: 0
+  _ghostSpriteRenderer: {fileID: 4884124647638018299}
+  _angerGhostSprite: {fileID: -2099502421, guid: 5b1a3d545e00adb4d954d33ded5e6598, type: 3}
+  _depressionGhostSprite: {fileID: -1896913849, guid: 76ae09bf81281ac4cab9fada6249e01c, type: 3}
+  _anxietyGhostSprite: {fileID: -588153417, guid: 2bfbf800589ded4478080f9d14cad5d8, type: 3}
+  _envyGhostSprite: {fileID: -588153417, guid: 2bfbf800589ded4478080f9d14cad5d8, type: 3}
+  _minimapSpriteRenderer: {fileID: 4846807350541597683}
   speed: 1
   waitTime: 1
   _moveSpots: []

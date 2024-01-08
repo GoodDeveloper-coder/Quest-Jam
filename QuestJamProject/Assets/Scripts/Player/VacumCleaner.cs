@@ -13,6 +13,8 @@ public class VacumCleaner : MonoBehaviour
 
     [SerializeField] ParticleSystem _particleSystem;
 
+    [SerializeField] private PlayerMovement _playerMovement;
+
     [SerializeField] bool _ghostInZone;
 
     [SerializeField] LayerMask Ground;
@@ -79,6 +81,27 @@ public class VacumCleaner : MonoBehaviour
         {
             if (ghost._canMove == false)
             {
+                switch (ghost._typeOfGhosts)
+                {
+                    case Ghost.TypesOfGhosts.Anger:
+                        //increases your vacuum range
+                        break;
+
+                    case Ghost.TypesOfGhosts.Depression:
+                        StartCoroutine(_playerMovement.BoostPlayerSpeed(5f, 5f)); // or _playerMovement.StartCoroutine(_playerMovement.BoostPlayerSpeed(7f, 5f));
+                        //increases your walking speed
+                        break;
+
+                    case Ghost.TypesOfGhosts.Anxiety:
+                        //makes your vacuum suck up ghosts faster (you cannot move while sucking up a ghost)
+                        break;
+
+
+                    case Ghost.TypesOfGhosts.Envy:
+                        //undecided on effect
+                        break;
+                }
+
                 Destroy(ghost.gameObject);
                 _gameManager.AddScore(5);
             }

@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxTimeBetweenFootsteps = 0.6f; // Maximum time between footstep sounds
     private float timeSinceLastFootstep; // Time since the last footstep sound
 
-    [SerializeField] private float walkSpeed = 2f;
+    [SerializeField] private float _walkSpeed = 2f;
 
     private Animator _anim;
     private Vector2 _moveVector;
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         _moveVector.x = _moveInputX.action.ReadValue<float>();
         _moveVector.y = _moveInputY.action.ReadValue<float>();
 
-        Move(walkSpeed);
+        Move(_walkSpeed);
 
         Reflect();
         
@@ -62,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(float speed)
     {
-        //_anim.SetFloat("moveX", Mathf.Abs(_moveVector.x));
         _rb.velocity = new Vector2(_moveVector.x * speed, _rb.velocity.y);
         _rb.velocity = new Vector2(_rb.velocity.x, _moveVector.y * speed);
     }
@@ -88,6 +87,14 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
+    }
+
+    public IEnumerator BoostPlayerSpeed(float boostSpeed, float time)
+    {
+        float defaultSpeed = _walkSpeed;
+        _walkSpeed = boostSpeed;
+        yield return new WaitForSeconds(time);
+        _walkSpeed = defaultSpeed;
     }
 
     public void FindGhostSound()

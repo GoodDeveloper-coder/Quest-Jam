@@ -4,7 +4,25 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer _spriteRenderer;
+    #region Ghost type
+
+    public enum TypesOfGhosts
+    {
+        Anger, //(red ghosts)
+        Depression, //(blue ghosts)
+        Anxiety, //(purple ghosts)
+        Envy //(green ghosts)
+    }
+
+    public TypesOfGhosts _typeOfGhosts;
+
+    [SerializeField] SpriteRenderer _ghostSpriteRenderer;
+
+    [SerializeField] Sprite _angerGhostSprite, _depressionGhostSprite, _anxietyGhostSprite, _envyGhostSprite;
+    #endregion
+
+    #region Fields
+    [SerializeField] SpriteRenderer _minimapSpriteRenderer;
 
     [SerializeField] float speed;
     [SerializeField] float waitTime;
@@ -16,9 +34,15 @@ public class Ghost : MonoBehaviour
 
     public bool _canMove = true;
 
+    #endregion
+
+    #region Monobehaviour Functions
+
     void Start()
     {
-        _spriteRenderer.enabled = true;
+        _ghostSpriteRenderer = GetComponent<SpriteRenderer>();
+        _minimapSpriteRenderer.enabled = true;
+        InitializeGhost();
         StartCoroutine(Move());
     }
 
@@ -36,6 +60,32 @@ public class Ghost : MonoBehaviour
         }
     }
 
+    #endregion
+    #region Initialize Ghost
+    void InitializeGhost()
+    {
+        switch (_typeOfGhosts)
+        {
+            case TypesOfGhosts.Anger:
+                _ghostSpriteRenderer.sprite = _angerGhostSprite;
+                break;
+
+            case TypesOfGhosts.Depression:
+                _ghostSpriteRenderer.sprite = _depressionGhostSprite;
+                break;
+
+            case TypesOfGhosts.Anxiety:
+                _ghostSpriteRenderer.sprite = _anxietyGhostSprite;
+                break;
+
+
+            case TypesOfGhosts.Envy:
+                _ghostSpriteRenderer.sprite = _envyGhostSprite;
+                break;
+        }
+    }
+    #endregion
+
     IEnumerator Move()
     {
         while (_canMove)
@@ -43,7 +93,10 @@ public class Ghost : MonoBehaviour
             randomSpot = Random.Range(0, _moveSpots.Count);
             while (Vector3.Distance(transform.position, _moveSpots[randomSpot].position) > 0.2f)
             {
-                transform.position = Vector3.MoveTowards(transform.position, _moveSpots[randomSpot].position, speed * Time.deltaTime);
+                if (_canMove)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, _moveSpots[randomSpot].position, speed * Time.deltaTime);
+                }
                 yield return null;
             }
             yield return new WaitForSeconds(waitTime);
@@ -52,7 +105,7 @@ public class Ghost : MonoBehaviour
 
     void MoveToPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 4f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
     }
 
     public void SetGhostFields(Transform playerTransform)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7ce5647a9fd27746a84ee21ec418e03
+guid: 2bfbf800589ded4478080f9d14cad5d8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_0
+      name: anxietyGhost-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be2d7bade44e9840852ec6caf154e1d
-      internalID: 127955807
+      spriteID: 2367f7847ea5add43853289d5b095792
+      internalID: -588153417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_1
+      name: anxietyGhost-Sheet_1
       rect:
         serializedVersion: 2
-        x: 160
+        x: 150
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe4fd7a2ddd089649949e7fa4e011e47
-      internalID: 454302103
+      spriteID: 68857dfe3f642f54dbfcc0f10f0db75b
+      internalID: -60499164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_2
+      name: anxietyGhost-Sheet_2
       rect:
         serializedVersion: 2
-        x: 320
+        x: 300
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edb9c641825dabe429028fcdd5e22ce6
-      internalID: -456551319
+      spriteID: 62bbccee0786a57419045f3e7f5094a0
+      internalID: -586640932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_3
+      name: anxietyGhost-Sheet_3
       rect:
         serializedVersion: 2
-        x: 480
+        x: 450
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00adc88f0ad25714f8f3523c2ae9ea58
-      internalID: -1336668735
+      spriteID: a07f223d26a899049ba5a86200a14e5e
+      internalID: -1902307451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_4
+      name: anxietyGhost-Sheet_4
       rect:
         serializedVersion: 2
-        x: 640
+        x: 600
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9394d29c80849c144ac7788fb1b241e2
-      internalID: -827834030
+      spriteID: 2f8559fcfefe3d7459c0d38b859e0204
+      internalID: 1740727228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_5
+      name: anxietyGhost-Sheet_5
       rect:
         serializedVersion: 2
-        x: 800
+        x: 750
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2e5c5d41e0f0e6419aa62d974202ec4
-      internalID: 447182393
+      spriteID: d6d2d32db1e08df4f80159b9bc977204
+      internalID: 1867013738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_6
+      name: anxietyGhost-Sheet_6
       rect:
         serializedVersion: 2
-        x: 960
+        x: 900
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25332320af745fb4b917fd64eb2948a7
-      internalID: 1468659121
+      spriteID: ac7ac64653f905b4eb717fc8d7c0800f
+      internalID: 1979878988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_7
+      name: anxietyGhost-Sheet_7
       rect:
         serializedVersion: 2
-        x: 1120
+        x: 1050
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dff91fa1380fe4f4792f0af56b944f9c
-      internalID: 1897901303
+      spriteID: 840487d6f5d017a4fa9f4d45cbaeac6a
+      internalID: -2083728152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_8
+      name: anxietyGhost-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1200
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b51e5444670ab2f4c85af41fd6de0ea6
-      internalID: -875165080
+      spriteID: 4cf61f667da18cc4eba91a8b0bf2f429
+      internalID: 1503517077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_9
+      name: anxietyGhost-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 1350
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19b38009ad285de4687f0342178881fd
-      internalID: 660651080
+      spriteID: 640fddcd07d6ac443967373e02157d9b
+      internalID: -1504742319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_10
+      name: anxietyGhost-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 1500
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dbbad18afa8684498d86ece8966be6d
-      internalID: 1218668027
+      spriteID: 90e66b7b4114e024e85a5f14faa60db6
+      internalID: 1251645992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_11
+      name: anxietyGhost-Sheet_11
       rect:
         serializedVersion: 2
-        x: 1760
+        x: 1650
         y: 0
-        width: 160
-        height: 240
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,29 +374,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 136a88b660e83b748a716d0d66e5210d
-      internalID: 491379533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 160
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a40531d5827f6945a4841158371e212
-      internalID: 1444159820
+      spriteID: 6d0a6ac3b98c7164a8e067f87d369e7b
+      internalID: 1863680088
       vertices: []
       indices: 
       edges: []
@@ -412,19 +391,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gamejamTimeLoop-Sheet_0: 127955807
-      gamejamTimeLoop-Sheet_1: 454302103
-      gamejamTimeLoop-Sheet_10: 1218668027
-      gamejamTimeLoop-Sheet_11: 491379533
-      gamejamTimeLoop-Sheet_12: 1444159820
-      gamejamTimeLoop-Sheet_2: -456551319
-      gamejamTimeLoop-Sheet_3: -1336668735
-      gamejamTimeLoop-Sheet_4: -827834030
-      gamejamTimeLoop-Sheet_5: 447182393
-      gamejamTimeLoop-Sheet_6: 1468659121
-      gamejamTimeLoop-Sheet_7: 1897901303
-      gamejamTimeLoop-Sheet_8: -875165080
-      gamejamTimeLoop-Sheet_9: 660651080
+      anxietyGhost-Sheet_0: -588153417
+      anxietyGhost-Sheet_1: -60499164
+      anxietyGhost-Sheet_10: 1251645992
+      anxietyGhost-Sheet_11: 1863680088
+      anxietyGhost-Sheet_2: -586640932
+      anxietyGhost-Sheet_3: -1902307451
+      anxietyGhost-Sheet_4: 1740727228
+      anxietyGhost-Sheet_5: 1867013738
+      anxietyGhost-Sheet_6: 1979878988
+      anxietyGhost-Sheet_7: -2083728152
+      anxietyGhost-Sheet_8: 1503517077
+      anxietyGhost-Sheet_9: -1504742319
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
