@@ -9355,7 +9355,7 @@ MonoBehaviour:
   mapWidth: 12
   mapHeight: 12
   ghostsPerColour: 13
-  secondsInCycle: 600
+  secondsInCycle: 60
   secondsToResetCycle: 2.5
   ghostPrefabs:
   - {fileID: 6191101888305027762, guid: 8a590e32e5cb5ba46982c3269b14c8f8, type: 3}

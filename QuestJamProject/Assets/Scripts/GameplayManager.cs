@@ -148,6 +148,11 @@ public class GameplayManager : MonoBehaviour
         foreach (GhostMovement ghost in ghosts) ghost.ResetPosition();
         panelHUD.SetActive(true);
         panelResetCycle.SetActive(false);
+        foreach (GameObject t in timer) t.SetActive(true);
+        Vector3 cameraPosition = Camera.main.transform.position;
+        cameraPosition.x = player.transform.position.x;
+        cameraPosition.y = player.transform.position.y;
+        Camera.main.transform.position = cameraPosition;
         StartCoroutine(IStartCycle());
     }
 }
