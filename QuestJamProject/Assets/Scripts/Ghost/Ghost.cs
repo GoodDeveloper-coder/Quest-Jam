@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ghost : MonoBehaviour
+public class Ghost : MonoBehaviour, IEnemy
 {
     #region Ghost type
 
@@ -24,8 +24,8 @@ public class Ghost : MonoBehaviour
     #region Fields
     [SerializeField] SpriteRenderer _minimapSpriteRenderer;
 
-    [SerializeField] float speed;
-    [SerializeField] float waitTime;
+    [SerializeField] float _speed;
+    [SerializeField] float _waitTime;
     [SerializeField] List<Transform> _moveSpots;
 
     private int randomSpot;
@@ -48,21 +48,23 @@ public class Ghost : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetMouseButtonUp(0))
         {
             _canMove = true;
             StartCoroutine(Move());
         }
+        */
 
         if (_canMove == false)
         {
-            MoveToPlayer();
+            MoveToVacumCleaner();
         }
     }
 
     #endregion
     #region Initialize Ghost
-    void InitializeGhost()
+    public void InitializeGhost()
     {
         switch (_typeOfGhosts)
         {
@@ -86,7 +88,7 @@ public class Ghost : MonoBehaviour
     }
     #endregion
 
-    IEnumerator Move()
+    public IEnumerator Move()
     {
         while (_canMove)
         {
@@ -95,22 +97,30 @@ public class Ghost : MonoBehaviour
             {
                 if (_canMove)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, _moveSpots[randomSpot].position, speed * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, _moveSpots[randomSpot].position, _speed * Time.deltaTime);
                 }
                 yield return null;
             }
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(_waitTime);
         }
     }
 
-    void MoveToPlayer()
+    public void MoveToVacumCleaner()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
+        if (Input.GetMouseButtonUp(0))
+        {
+            _canMove = true;
+            StartCoroutine(Move());
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
+        }
     }
 
-    public void SetGhostFields(Transform playerTransform)
+    public void SetGhostFields(Transform suckUpPosition)
     {
-        _target = playerTransform;
+        _target = suckUpPosition;
         _canMove = false;
     }
 }
