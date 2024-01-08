@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7ce5647a9fd27746a84ee21ec418e03
+guid: 5b1a3d545e00adb4d954d33ded5e6598
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,12 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_0
+      name: angerGhost-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be2d7bade44e9840852ec6caf154e1d
-      internalID: 127955807
+      spriteID: c8bcf1993e030db4d82d1272d444059d
+      internalID: -2099502421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_1
+      name: angerGhost-Sheet_1
       rect:
         serializedVersion: 2
-        x: 160
+        x: 150
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe4fd7a2ddd089649949e7fa4e011e47
-      internalID: 454302103
+      spriteID: e803f22f78d8c0f4eb21f44391e3a0b5
+      internalID: -1937266306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_2
+      name: angerGhost-Sheet_2
       rect:
         serializedVersion: 2
-        x: 320
+        x: 300
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edb9c641825dabe429028fcdd5e22ce6
-      internalID: -456551319
+      spriteID: be127e219980b77449c1e9956c7950b7
+      internalID: -897552604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_3
+      name: angerGhost-Sheet_3
       rect:
         serializedVersion: 2
-        x: 480
+        x: 450
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,19 +206,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00adc88f0ad25714f8f3523c2ae9ea58
-      internalID: -1336668735
+      spriteID: 1d4e4f6af7049c643a34284a01a664b5
+      internalID: -2078651371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_4
+      name: angerGhost-Sheet_4
       rect:
         serializedVersion: 2
-        x: 640
+        x: 600
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -227,19 +227,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9394d29c80849c144ac7788fb1b241e2
-      internalID: -827834030
+      spriteID: c58de7cd2871a6b43b06739436e944ce
+      internalID: 2010466626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_5
+      name: angerGhost-Sheet_5
       rect:
         serializedVersion: 2
-        x: 800
+        x: 750
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -248,19 +248,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2e5c5d41e0f0e6419aa62d974202ec4
-      internalID: 447182393
+      spriteID: 1e94b827bf0821842910f7745b577702
+      internalID: -374519127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_6
+      name: angerGhost-Sheet_6
       rect:
         serializedVersion: 2
-        x: 960
+        x: 900
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -269,19 +269,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25332320af745fb4b917fd64eb2948a7
-      internalID: 1468659121
+      spriteID: a9c27b058ea32cb488e14dcf00c6b559
+      internalID: 1700422706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_7
+      name: angerGhost-Sheet_7
       rect:
         serializedVersion: 2
-        x: 1120
+        x: 1050
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -290,19 +290,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dff91fa1380fe4f4792f0af56b944f9c
-      internalID: 1897901303
+      spriteID: 5e5cea3e080139642a006c9e1425cb54
+      internalID: -1237319166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_8
+      name: angerGhost-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1200
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -311,19 +311,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b51e5444670ab2f4c85af41fd6de0ea6
-      internalID: -875165080
+      spriteID: 8cf6a1eac6e078348899bf316b3fa7da
+      internalID: -248931206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_9
+      name: angerGhost-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 1350
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -332,19 +332,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19b38009ad285de4687f0342178881fd
-      internalID: 660651080
+      spriteID: 885fa9effa4bdae488f8d9d33e978fad
+      internalID: 1284085780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_10
+      name: angerGhost-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 1500
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -353,19 +353,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dbbad18afa8684498d86ece8966be6d
-      internalID: 1218668027
+      spriteID: 9b990f7beee4e3546afa0e4876c8a7fc
+      internalID: -921830542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_11
+      name: angerGhost-Sheet_11
       rect:
         serializedVersion: 2
-        x: 1760
+        x: 1650
         y: 0
-        width: 160
+        width: 150
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -374,29 +374,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 136a88b660e83b748a716d0d66e5210d
-      internalID: 491379533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamejamTimeLoop-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 160
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a40531d5827f6945a4841158371e212
-      internalID: 1444159820
+      spriteID: a4d6dfc747dab01479fa7b02eeee51de
+      internalID: -133160965
       vertices: []
       indices: 
       edges: []
@@ -412,19 +391,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gamejamTimeLoop-Sheet_0: 127955807
-      gamejamTimeLoop-Sheet_1: 454302103
-      gamejamTimeLoop-Sheet_10: 1218668027
-      gamejamTimeLoop-Sheet_11: 491379533
-      gamejamTimeLoop-Sheet_12: 1444159820
-      gamejamTimeLoop-Sheet_2: -456551319
-      gamejamTimeLoop-Sheet_3: -1336668735
-      gamejamTimeLoop-Sheet_4: -827834030
-      gamejamTimeLoop-Sheet_5: 447182393
-      gamejamTimeLoop-Sheet_6: 1468659121
-      gamejamTimeLoop-Sheet_7: 1897901303
-      gamejamTimeLoop-Sheet_8: -875165080
-      gamejamTimeLoop-Sheet_9: 660651080
+      angerGhost-Sheet_0: -2099502421
+      angerGhost-Sheet_1: -1937266306
+      angerGhost-Sheet_10: -921830542
+      angerGhost-Sheet_11: -133160965
+      angerGhost-Sheet_2: -897552604
+      angerGhost-Sheet_3: -2078651371
+      angerGhost-Sheet_4: 2010466626
+      angerGhost-Sheet_5: -374519127
+      angerGhost-Sheet_6: 1700422706
+      angerGhost-Sheet_7: -1237319166
+      angerGhost-Sheet_8: -248931206
+      angerGhost-Sheet_9: 1284085780
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

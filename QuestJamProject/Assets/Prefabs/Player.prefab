@@ -4864,6 +4864,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _spriteRenderer: {fileID: 8548593407502537997}
   _particleSystem: {fileID: 6015713804500550155}
+  _playerMovement: {fileID: 6015713805542343185}
   _ghostInZone: 0
   Ground:
     serializedVersion: 2
@@ -5099,7 +5100,7 @@ MonoBehaviour:
   _footSteps: []
   minTimeBetweenFootsteps: 0.3
   maxTimeBetweenFootsteps: 0.6
-  walkSpeed: 5
+  _walkSpeed: 2
 --- !u!95 &3423594347099724955
 Animator:
   serializedVersion: 5
