@@ -40,11 +40,11 @@ public class PlayerMovement : MonoBehaviour
         Move(walkSpeed);
 
         Reflect();
-        /*
+        
         _anim.SetFloat("Horizontal", _moveVector.x);
         _anim.SetFloat("Vertical", _moveVector.y);
         _anim.SetFloat("Speed", _moveVector.sqrMagnitude);
-        */
+        
 
         /*
         if (_moveVector.sqrMagnitude > 0)
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(float speed)
     {
-        // _anim.SetFloat("moveX", Mathf.Abs(_moveVector.x));
+        //_anim.SetFloat("moveX", Mathf.Abs(_moveVector.x));
         _rb.velocity = new Vector2(_moveVector.x * speed, _rb.velocity.y);
         _rb.velocity = new Vector2(_rb.velocity.x, _moveVector.y * speed);
     }
