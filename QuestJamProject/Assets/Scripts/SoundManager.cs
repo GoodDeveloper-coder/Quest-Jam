@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private AudioClip _vacumCleanerSuckUpGhostSound, _winSound, _vacumCleanerWorkSound, _backInTimeSound;
+    [SerializeField] private AudioClip _winSound, _vacumCleanerWorkSound, _vacumOnOffSound;
+    [SerializeField] private AudioClip _returningInTimeSound;
+
+    [SerializeField] private List<AudioClip> _ghostCaught;
 
     [SerializeField] private AudioSource _soundAudioSource;
 
@@ -21,11 +24,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySuckUpGhostSound()
-    {
-        _soundAudioSource.PlayOneShot(_vacumCleanerSuckUpGhostSound, 0.5f);
-    }
-
     public void PlayWinSound()
     {
         _soundAudioSource.PlayOneShot(_winSound, 0.5f);
@@ -33,11 +31,16 @@ public class SoundManager : MonoBehaviour
 
     public void PlayVacumCleanerWorkSound()
     {
-        _soundAudioSource.PlayOneShot(_vacumCleanerWorkSound, 0.5f);
+        _soundAudioSource.PlayOneShot(_vacumCleanerWorkSound, 0.1f);
     }
 
-    public void PlayBackInTimeSound()
+    public void PlayVacumOnOffSound()
     {
-        _soundAudioSource.PlayOneShot(_backInTimeSound, 0.5f);
+        _soundAudioSource.PlayOneShot(_vacumOnOffSound, 0.4f);
+    }
+
+    public void PlayGhostCaughtSound()
+    {
+        _soundAudioSource.PlayOneShot(_ghostCaught[Random.Range(0, _ghostCaught.Count)], 0.5f);
     }
 }
