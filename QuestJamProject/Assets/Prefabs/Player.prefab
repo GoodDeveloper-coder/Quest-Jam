@@ -4862,15 +4862,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 0}
   _spriteRenderer: {fileID: 8548593407502537997}
-  _particleSystem: {fileID: 6015713804500550155}
-  _playerMovement: {fileID: 6015713805542343185}
+  _particles: {fileID: 0}
+  _playerMovement: {fileID: 0}
   _ghostInZone: 0
   _ghostLayerMap:
     serializedVersion: 2
     m_Bits: 64
   _checkGhost: {fileID: 6015713804779870886}
   _attackCooldown: 2
-  _deffaultAttackCooldown: 0
 --- !u!61 &488307443043713046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4881,7 +4880,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.6498773, y: -0.17050406}
@@ -4958,8 +4957,8 @@ GameObject:
   - component: {fileID: 6015713805542343190}
   - component: {fileID: 6015713805542343191}
   - component: {fileID: 6015713805542343184}
-  - component: {fileID: 6015713805542343185}
   - component: {fileID: 3423594347099724955}
+  - component: {fileID: 3979819399994854612}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5083,25 +5082,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6015713805542343185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6015713805542343186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d312ab0d92c7d4c83c3aaeae8921fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveInputX: {fileID: -7766141081142390232, guid: 0eca2df9ddb7c3e43b6eedd8d35682fd, type: 3}
-  _moveInputY: {fileID: 6664391004064443037, guid: 0eca2df9ddb7c3e43b6eedd8d35682fd, type: 3}
-  _findGhostSound: {fileID: 0}
-  _footSteps: []
-  minTimeBetweenFootsteps: 0.3
-  maxTimeBetweenFootsteps: 0.6
-  _walkSpeed: 2
 --- !u!95 &3423594347099724955
 Animator:
   serializedVersion: 5
@@ -5123,6 +5103,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3979819399994854612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015713805542343186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde3b8b5a7f81444095edbe19561b40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveInputX: {fileID: -7766141081142390232, guid: 0eca2df9ddb7c3e43b6eedd8d35682fd, type: 3}
+  _moveInputY: {fileID: 6664391004064443037, guid: 0eca2df9ddb7c3e43b6eedd8d35682fd, type: 3}
+  _findGhostSound: {fileID: 0}
+  _footSteps: []
+  minTimeBetweenFootsteps: 0.3
+  maxTimeBetweenFootsteps: 0.6
+  _walkSpeed: 5
 --- !u!1 &8703296946712039807
 GameObject:
   m_ObjectHideFlags: 0

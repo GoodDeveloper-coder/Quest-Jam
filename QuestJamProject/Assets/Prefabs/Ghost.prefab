@@ -181,7 +181,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -206,7 +206,7 @@ MonoBehaviour:
   _anxietyGhostSprite: {fileID: -588153417, guid: 2bfbf800589ded4478080f9d14cad5d8, type: 3}
   _envyGhostSprite: {fileID: -588153417, guid: 2bfbf800589ded4478080f9d14cad5d8, type: 3}
   _minimapSpriteRenderer: {fileID: 4846807350541597683}
-  speed: 1
-  waitTime: 1
+  _speed: 0
+  _waitTime: 0
   _moveSpots: []
   _canMove: 1

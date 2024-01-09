@@ -14,8 +14,8 @@ public class PlayerMovement2 : MonoBehaviour
     [SerializeField] private AudioSource _findGhostSound;
     [SerializeField] private List<AudioSource> _footSteps;
 
-    [SerializeField] float minTimeBetweenFootsteps = 0.3f; // Minimum time between footstep sounds
-    [SerializeField] float maxTimeBetweenFootsteps = 0.6f; // Maximum time between footstep sounds
+    //[SerializeField] float minTimeBetweenFootsteps = 0.3f; // Minimum time between footstep sounds
+    //[SerializeField] float maxTimeBetweenFootsteps = 0.6f; // Maximum time between footstep sounds
     private float timeSinceLastFootstep; // Time since the last footstep sound
 
     [SerializeField] private float walkSpeed = 2f;
@@ -33,7 +33,7 @@ public class PlayerMovement2 : MonoBehaviour
     private Vector2 origin;
     private Vector2 startPosition;
     private Vector2 pMoveVector;
-    private bool moving;
+    //private bool moving;
     private bool locked;
     private int direction;
     private bool vacuumOn;
@@ -224,7 +224,7 @@ public class PlayerMovement2 : MonoBehaviour
         if (l)
         {
             StopAllCoroutines();
-            moving = false;
+            //moving = false;
         }
     }
 
@@ -236,7 +236,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     private IEnumerator IMove(int direction)
     {
-        moving = true;
+        //moving = true;
         Vector2 target = _rb.position + (new Vector2[] { Vector2.right, Vector2.up, -Vector2.right, -Vector2.up })[direction];
         float distance = (_rb.position - target).sqrMagnitude;
         while (distance > float.Epsilon)
@@ -246,7 +246,7 @@ public class PlayerMovement2 : MonoBehaviour
             yield return null;
         }
         _rb.MovePosition(target);
-        moving = false;
+        //moving = false;
         startPosition = target;
     }
 

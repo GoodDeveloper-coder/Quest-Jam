@@ -34,6 +34,8 @@ public class VacumCleaner : MonoBehaviour
 
     private float _deffaultAttackCooldown;
 
+    private Ghost ghostInVacuum;
+
     #endregion
     #region Monobehaviour Functions
     private void Start()
@@ -155,7 +157,7 @@ public class VacumCleaner : MonoBehaviour
                 }
 
                 //StartCoroutine(AttackCooldown());
-                Destroy(ghost.gameObject);
+                //Destroy(ghost.gameObject);
                 _gameManager.AddScore(5);
             }
         }
@@ -181,4 +183,11 @@ public class VacumCleaner : MonoBehaviour
     }
 
     #endregion
+
+    public Ghost GetGhost()
+    {
+        Ghost ghost = ghostInVacuum;
+        ghostInVacuum = null;
+        return ghost;
+    }
 }

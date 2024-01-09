@@ -11,11 +11,13 @@ public class GameplayManager : MonoBehaviour
 
     [SerializeField] private GameObject[] timer;
 
+    [SerializeField] private TextMeshProUGUI[] textGhostsLeft;
     [SerializeField] private TextMeshProUGUI textTotalTime;
     [SerializeField] private TextMeshProUGUI textGhostsPerCycle;
     [SerializeField] private TextMeshProUGUI textFinalScore;
     
-    [SerializeField] private PlayerMovement2 player;
+    [SerializeField] private PlayerMovement player;
+    [SerializeField] private VacumCleaner vacuum;
 
     [SerializeField] private int mapWidth;
     [SerializeField] private int mapHeight;
@@ -26,11 +28,11 @@ public class GameplayManager : MonoBehaviour
 
     [SerializeField] private GameObject[] ghostPrefabs;
 
-    private GhostMovement[] ghosts;
+    private Ghost[] ghosts;
 
     private bool ticking;
     private float elapsedSeconds;
-    private int[] ghostsCaughtPerColour;
+    private bool[] ghostsCaught;
     private int totalGhostsCaught;
     private int cycles;
     private float finalScore;
@@ -40,68 +42,71 @@ public class GameplayManager : MonoBehaviour
     {
         panelResetCycle.SetActive(false);
         panelScore.SetActive(false);
-        ghosts = new GhostMovement[ghostsPerColour * ghostPrefabs.Length];
-        List<Vector2> positions = new List<Vector2>();
-        for (int i = -mapWidth; i <= mapWidth; i++) for (int j = -mapHeight; j <= mapHeight; j++) positions.Add(new Vector2(i, j));
+        ghosts = new Ghost[ghostsPerColour * ghostPrefabs.Length];
+        List<Vector3> positions = new List<Vector3>();
+        for (int i = -mapWidth; i <= mapWidth; i++) for (int j = -mapHeight; j <= mapHeight; j++) positions.Add(transform.position + Vector3.right * i + Vector3.up * j);
         bool[] occupied = new bool[positions.Count];
         occupied[occupied.Length / 2] = true;
         for (int i = 0; i < ghosts.Length; i++)
         {
-            List<Vector2> path = new List<Vector2>();
+            List<Vector3> path = new List<Vector3>();
             int r;
             do r = Random.Range(0, occupied.Length);
             while (occupied[r]);
             occupied[r] = true;
-            bool b = Random.Range(0, 2) == 0;
-            int pr = (int)(b ? positions[r].x : positions[r].y);
-            Vector2 currentPosition = positions[r];
-            ghosts[i] = Instantiate(ghostPrefabs[i % ghostPrefabs.Length], transform.position + Vector3.right * currentPosition.x + Vector3.up * currentPosition.y, transform.rotation).GetComponent<GhostMovement>();
+            Vector3 currentPosition = positions[r];
+            ghosts[i] = Instantiate(ghostPrefabs[i % ghostPrefabs.Length], currentPosition, transform.rotation).GetComponent<Ghost>();
             for (int j = 0; j < 40; j++)
             {
-                Vector2 newPosition = currentPosition;
-                if (b ? j % 2 == 0 : j % 2 == 1)
+                Vector3 newPosition = currentPosition;
+                do
                 {
-                    do r = Random.Range(-mapWidth, mapWidth);
-                    while (r == pr);
-                    currentPosition.x = r;
-                    pr = (int)currentPosition.y;
+                    newPosition.x = Random.Range(-mapWidth, mapWidth);
+                    newPosition.y = Random.Range(-mapHeight, mapHeight);
+                    newPosition = Vector3.MoveTowards(currentPosition, newPosition, Mathf.Min(mapWidth, mapHeight) / Random.Range(2f, 4f));
                 }
-                else
-                {
-                    do r = Random.Range(-mapHeight, mapHeight);
-                    while (r == pr);
-                    currentPosition.y = r;
-                    pr = (int)currentPosition.x;
-                }
+                while (Mathf.Abs(newPosition.x) > mapWidth && Mathf.Abs(newPosition.y) > mapHeight);
+                currentPosition = newPosition;
                 path.Add(currentPosition);
             }
             ghosts[i].SetPath(path.ToArray());
-            ghosts[i].SetMoving(false);
+            ghosts[i].SetLocked(true);
         }
-        ghostsCaughtPerColour = new int[ghostPrefabs.Length];
+        ghostsCaught = new bool[ghosts.Length];
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!ticking) return;
-        bool allCaught = true;
-        foreach (GhostMovement g in ghosts) allCaught &= g.GetCaught();
-        if(allCaught)
+        Ghost ghost = vacuum.GetGhost();
+        if (ghost != null)
         {
-            ticking = false;
-            player.SetLocked(true);
-            panelHUD.SetActive(false);
-            panelResetCycle.SetActive(false);
-            panelScore.SetActive(true);
-            int minutes = (int)elapsedSeconds / 60;
-            int seconds = (int)elapsedSeconds % 60;
-            float ghostsPerCycle = totalGhostsCaught * 1f / cycles;
-            finalScore = ghostsPerCycle * 10000f / elapsedSeconds;
-            textTotalTime.text = minutes + (seconds < 10 ? ":0" : ":") + seconds;
-            textGhostsPerCycle.text = (int)ghostsPerCycle + "";
-            textFinalScore.text = (int)finalScore + "";
-            return;
+            ghost.StopAllCoroutines();
+            ghost.SetCaught(true);
+            bool allCaught = true;
+            for (int i = 0; i < ghosts.Length; i++)
+            {
+                if (!ghostsCaught[i]) ghostsCaught[i] = ghosts[i] == ghost;
+                allCaught &= ghostsCaught[i];
+            }
+            ghost.gameObject.SetActive(false);
+            if (allCaught)
+            {
+                ticking = false;
+                player.SetLocked(true);
+                panelHUD.SetActive(false);
+                panelResetCycle.SetActive(false);
+                panelScore.SetActive(true);
+                int minutes = (int)elapsedSeconds / 60;
+                int seconds = (int)elapsedSeconds % 60;
+                float ghostsPerCycle = totalGhostsCaught * 1f / cycles;
+                finalScore = ghostsPerCycle * 10000f / elapsedSeconds;
+                textTotalTime.text = minutes + (seconds < 10 ? ":0" : ":") + seconds;
+                textGhostsPerCycle.text = (int)ghostsPerCycle + "";
+                textFinalScore.text = (int)finalScore + "";
+               return;
+            }
         }
         elapsedSeconds += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.R)) ResetCycle();
@@ -120,8 +125,18 @@ public class GameplayManager : MonoBehaviour
 
     private IEnumerator IStartCycle()
     {
+        int[] ghostsLeft = new int[ghostPrefabs.Length];
         player.SetLocked(false);
-        foreach (GhostMovement ghost in ghosts) ghost.SetMoving(true);
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            if (!ghostsCaught[i])
+            {
+                ghostsLeft[i % ghostPrefabs.Length]++;
+                ghosts[i].SetLocked(false);
+                ghosts[i].ResetTimeLoop();
+            }
+        }
+        for (int i = 0; i < ghostPrefabs.Length; i++) textGhostsLeft[i].text = ghostsLeft[i] + "";
         cycles++;
         ticking = true;
         float timeLeft = secondsInCycle;
@@ -140,12 +155,24 @@ public class GameplayManager : MonoBehaviour
     {
         ticking = false;
         player.SetLocked(true);
-        foreach (GhostMovement ghost in ghosts) ghost.SetMoving(false);
+        foreach (Ghost ghost in ghosts) ghost.SetLocked(true);
         panelHUD.SetActive(false);
         panelResetCycle.SetActive(true);
         yield return new WaitForSeconds(secondsToResetCycle);
         player.ResetPosition();
-        foreach (GhostMovement ghost in ghosts) ghost.ResetPosition();
+        for (int i = 0; i < ghostPrefabs.Length; i++)
+        {
+            bool allCaught = true;
+            for (int j = i; j < ghosts.Length; j += ghostPrefabs.Length) allCaught &= ghostsCaught[j];
+            if (!allCaught)
+            {
+                for (int j = i; j < ghosts.Length; j += ghostPrefabs.Length)
+                {
+                    ghosts[j].gameObject.SetActive(true);
+                    ghosts[i].SetCaught(false);
+                }
+            }
+        }
         panelHUD.SetActive(true);
         panelResetCycle.SetActive(false);
         foreach (GameObject t in timer) t.SetActive(true);

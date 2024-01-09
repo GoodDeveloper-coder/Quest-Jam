@@ -26,14 +26,21 @@ public class PlayerMovement : MonoBehaviour
 
     private bool faceRight = true;
 
+    private Vector2 origin;
+    private bool locked;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        origin = _rb.position;
+        locked = true;
     }
 
     private void Update()
     {
+        if (locked) return;
+
         _moveVector.x = _moveInputX.action.ReadValue<float>();
         _moveVector.y = _moveInputY.action.ReadValue<float>();
 
@@ -62,8 +69,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(float speed)
     {
-        _rb.velocity = new Vector2(_moveVector.x * speed, _rb.velocity.y);
-        _rb.velocity = new Vector2(_rb.velocity.x, _moveVector.y * speed);
+        Vector2 normalisedMV = _moveVector.normalized;
+        _rb.velocity = new Vector2(normalisedMV.x * speed, _rb.velocity.y);
+        _rb.velocity = new Vector2(_rb.velocity.x, normalisedMV.y * speed);
     }
 
     private void Reflect()
@@ -100,5 +108,16 @@ public class PlayerMovement : MonoBehaviour
     public void FindGhostSound()
     {
         _findGhostSound.Play();
+    }
+
+    public void SetLocked(bool l)
+    {
+        locked = l;
+        if (l) _rb.velocity = Vector2.zero;
+    }
+
+    public void ResetPosition()
+    {
+        _rb.position = origin;
     }
 }
