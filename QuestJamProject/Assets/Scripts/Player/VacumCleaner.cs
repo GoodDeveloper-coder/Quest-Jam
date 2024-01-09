@@ -9,6 +9,8 @@ public class VacumCleaner : MonoBehaviour
 
     [SerializeField] private GameManager _gameManager;
 
+    [SerializeField] private SoundManager _soundManager;
+
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     [SerializeField] GameObject _particles;
@@ -34,6 +36,15 @@ public class VacumCleaner : MonoBehaviour
 
     private float _deffaultAttackCooldown;
 
+
+    [SerializeField] float minTimeBetweenVacumCleanerWorkingSound = 0.3f; 
+    [SerializeField] float maxTimeBetweenCleanerWorkingSound = 0.6f;
+    private float timeSinceLastFootstep;
+    /*
+    [SerializeField] float minTimeBetweenVacumSuckUpSound = 0.3f;
+    [SerializeField] float maxTimeBetweenVacumSuckUpSound = 0.6f;
+    private float timeSinceLastVacumSuckUp;
+    */
     #endregion
     #region Monobehaviour Functions
     private void Start()
@@ -59,6 +70,11 @@ public class VacumCleaner : MonoBehaviour
             _particles.SetActive(false);
             _spriteRenderer.enabled = false;
         }
+
+        if (Input.GetMouseButtonDown(0))
+        _soundManager.PlayVacumOnOffSound();
+        else if (Input.GetMouseButtonUp(0))
+        _soundManager.PlayVacumOnOffSound();
     }
 
     #endregion
@@ -67,6 +83,13 @@ public class VacumCleaner : MonoBehaviour
 
     void Attack()
     {
+        if (Time.time - timeSinceLastFootstep >= Random.Range(minTimeBetweenVacumCleanerWorkingSound, maxTimeBetweenCleanerWorkingSound))
+        {
+            _soundManager.PlayVacumCleanerWorkSound();
+
+            timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound
+        }
+
         _ghostInZone = Physics2D.OverlapCircle(_checkGhost.position, GroundCheckRadius, _ghostLayerMap);
         _spriteRenderer.enabled = true;
         if (_ghostInZone)
@@ -124,7 +147,7 @@ public class VacumCleaner : MonoBehaviour
 
     #region Ghost Effects
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Ghost ghost = collision.transform.GetComponent<Ghost>();
         if (ghost != null)
@@ -156,6 +179,7 @@ public class VacumCleaner : MonoBehaviour
 
                 //StartCoroutine(AttackCooldown());
                 Destroy(ghost.gameObject);
+                _soundManager.PlayGhostCaughtSound();
                 _gameManager.AddScore(5);
             }
         }

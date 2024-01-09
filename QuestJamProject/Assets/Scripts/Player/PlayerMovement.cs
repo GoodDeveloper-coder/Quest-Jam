@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Sfx")]
     [SerializeField] private AudioSource _findGhostSound;
-    [SerializeField] private List<AudioSource> _footSteps;
+    [SerializeField] private List<AudioClip> _footSteps;
 
     [SerializeField] float minTimeBetweenFootsteps = 0.3f; // Minimum time between footstep sounds
     [SerializeField] float maxTimeBetweenFootsteps = 0.6f; // Maximum time between footstep sounds
@@ -46,18 +46,18 @@ public class PlayerMovement : MonoBehaviour
         _anim.SetFloat("Speed", _moveVector.sqrMagnitude);
         
 
-        /*
+        
         if (_moveVector.sqrMagnitude > 0)
         {
             if (Time.time - timeSinceLastFootstep >= Random.Range(minTimeBetweenFootsteps, maxTimeBetweenFootsteps))
             {
                 // Play a random footstep sound from the array
-                _footSteps[Random.Range(0, _footSteps.Count)].Play();
+                _findGhostSound.PlayOneShot(_footSteps[Random.Range(0, _footSteps.Count)]);
 
                 timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound
             }
         }
-        */
+        
     }
 
     private void Move(float speed)

@@ -7173,10 +7173,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a235d8e3e47d8a84c95755ab8f4e8e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vacumCleanerSuckUpGhostSound: {fileID: 0}
   _winSound: {fileID: 0}
-  _vacumCleanerWorkSound: {fileID: 0}
-  _backInTimeSound: {fileID: 0}
+  _vacumCleanerWorkSound: {fileID: 8300000, guid: f8f07f73755a9b44a8d9006c1f220f52, type: 3}
+  _vacumOnOffSound: {fileID: 8300000, guid: d6c87e2d2d7afce4c9e5aef6d3d6b581, type: 3}
+  _returningInTimeSound: {fileID: 8300000, guid: 83f417ed485b38746a52eeefe9d5ac62, type: 3}
+  _ghostCaught:
+  - {fileID: 8300000, guid: 117c32970a0590941ba04c5448039c0c, type: 3}
+  - {fileID: 8300000, guid: 95bf4404eb45dbb498018bc076adc85a, type: 3}
+  - {fileID: 8300000, guid: ecbbf51046075ee4eab72c657c8239ae, type: 3}
+  - {fileID: 8300000, guid: 32f11a0a6af30654bb7e28d4c432dced, type: 3}
+  - {fileID: 8300000, guid: 6eb01c17f54b7a64487fc8c202d38d67, type: 3}
+  - {fileID: 8300000, guid: c26250b3e7c147d4db30d6fdd2353b4d, type: 3}
+  - {fileID: 8300000, guid: 3eb5341f1fff01d4d93411949cd26b7a, type: 3}
+  - {fileID: 8300000, guid: aa0eb666c68ec2847a0566992810d1d4, type: 3}
+  - {fileID: 8300000, guid: ee1f2a5ece02a984a95482a21bbcbad2, type: 3}
+  - {fileID: 8300000, guid: 022a66c141dad594e860a0d4d249e24f, type: 3}
   _soundAudioSource: {fileID: 2144390688}
   _tracksAudioSource: {fileID: 2144390687}
   _gameplayTracks:
@@ -7534,6 +7545,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 2144390685}
+    - target: {fileID: 6015713804728378047, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
+      propertyPath: _soundManager
+      value: 
+      objectReference: {fileID: 2144390686}
     - target: {fileID: 6015713804728378047, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
       propertyPath: attackCooldown
       value: 0
