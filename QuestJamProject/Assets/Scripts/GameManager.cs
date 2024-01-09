@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Transform> _ghostsSpawnPositions;
     [SerializeField] private List<Transform> _ghostMoveSpots;
 
+    [SerializeField] private GameObject _player;
+    private Vector3 _playerStartPos;
+
     private int _score;
 
     public int Score
@@ -34,6 +37,8 @@ public class GameManager : MonoBehaviour
         SpawnGhosts();
 
         Score = 0;
+
+        _playerStartPos = _player.transform.position;
     }
 
 
@@ -70,6 +75,8 @@ public class GameManager : MonoBehaviour
                 ghost.transform.position = ghost.GetComponent<Ghost>().GetGhostStartPos();
             }
         }
+
+        _player.transform.position = _playerStartPos;
     }
 
     #endregion

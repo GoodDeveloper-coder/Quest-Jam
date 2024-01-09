@@ -6368,9 +6368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252c63e1c89bdb3468f38b1ecee1cf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _milli: 0
-  _second: 0
-  _isTiming: 1
+  uiText: {fileID: 1259003885}
+  Duration: 5
 --- !u!114 &1259003885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7256,6 +7255,7 @@ MonoBehaviour:
   - {fileID: 1066931983}
   - {fileID: 338561798}
   - {fileID: 1164615342}
+  _player: {fileID: 127170601}
 --- !u!114 &2144390686
 MonoBehaviour:
   m_ObjectHideFlags: 0
