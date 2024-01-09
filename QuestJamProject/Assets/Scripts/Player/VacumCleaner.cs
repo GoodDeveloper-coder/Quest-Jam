@@ -11,6 +11,8 @@ public class VacumCleaner : MonoBehaviour
 
     [SerializeField] private SoundManager _soundManager;
 
+    [SerializeField] private Transform _ghostSuckUpPos;
+
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     [SerializeField] GameObject _particles;
@@ -103,7 +105,7 @@ public class VacumCleaner : MonoBehaviour
                         IEnemy ghostScript = collider.GetComponent<IEnemy>();
                         if (ghostScript != null)
                         {
-                            ghostScript.SetGhostFields(transform);
+                            ghostScript.SetGhostFields(_ghostSuckUpPos);
                         }
 
                         StartCoroutine(AttackCooldown());

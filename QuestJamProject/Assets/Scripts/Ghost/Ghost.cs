@@ -16,9 +16,9 @@ public class Ghost : MonoBehaviour, IEnemy
 
     public TypesOfGhosts _typeOfGhosts;
 
-    [SerializeField] SpriteRenderer _ghostSpriteRenderer;
+    [SerializeField] Animator _ghostAnimator;
 
-    [SerializeField] Sprite _angerGhostSprite, _depressionGhostSprite, _anxietyGhostSprite, _envyGhostSprite;
+    [SerializeField] RuntimeAnimatorController _angerGhostAnimator, _depressionGhostAnimator, _anxietyGhostAnimator, _envyGhostAnimator;
     #endregion
 
     #region Fields
@@ -30,11 +30,15 @@ public class Ghost : MonoBehaviour, IEnemy
 
     private int randomSpot;
 
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+
     private Transform _target;
 
     public bool _canMove = true;
 
     private Vector3 _startPos;
+
+    private Vector3 _deffaultScale;
 
     #endregion
 
@@ -43,7 +47,8 @@ public class Ghost : MonoBehaviour, IEnemy
     void Start()
     {
         _startPos = transform.position;
-        _ghostSpriteRenderer = GetComponent<SpriteRenderer>();
+        _deffaultScale = transform.localScale;
+        _ghostAnimator = GetComponent<Animator>();
         _minimapSpriteRenderer.enabled = true;
         //InitializeGhost();
         //StartCoroutine(Move());
@@ -63,6 +68,13 @@ public class Ghost : MonoBehaviour, IEnemy
         {
             MoveToVacumCleaner();
         }
+        else
+        {
+            if (transform.localScale.x < _deffaultScale.x || transform.localScale.y < _deffaultScale.y)
+            {
+                transform.localScale += new Vector3(0.005f, 0.005f, 0f);
+            }
+        }
     }
 
     #endregion
@@ -72,20 +84,20 @@ public class Ghost : MonoBehaviour, IEnemy
         switch (_typeOfGhosts)
         {
             case TypesOfGhosts.Anger:
-                _ghostSpriteRenderer.sprite = _angerGhostSprite;
+                _ghostAnimator.runtimeAnimatorController = _angerGhostAnimator;
                 break;
 
             case TypesOfGhosts.Depression:
-                _ghostSpriteRenderer.sprite = _depressionGhostSprite;
+                _ghostAnimator.runtimeAnimatorController = _depressionGhostAnimator;
                 break;
 
             case TypesOfGhosts.Anxiety:
-                _ghostSpriteRenderer.sprite = _anxietyGhostSprite;
+                _ghostAnimator.runtimeAnimatorController = _anxietyGhostAnimator;
                 break;
 
 
             case TypesOfGhosts.Envy:
-                _ghostSpriteRenderer.sprite = _envyGhostSprite;
+                _ghostAnimator.runtimeAnimatorController = _envyGhostAnimator;
                 break;
         }
 
@@ -103,9 +115,16 @@ public class Ghost : MonoBehaviour, IEnemy
                 if (_canMove)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, _moveSpots[randomSpot].position, _speed * Time.deltaTime);
+                    _ghostAnimator.SetFloat("Speed", 1f);
                 }
                 yield return null;
             }
+
+            if (Vector3.Distance(transform.position, _moveSpots[randomSpot].position) < 0.2f)
+            {
+                _ghostAnimator.SetFloat("Speed", 0f);
+            }
+
             yield return new WaitForSeconds(_waitTime);
         }
     }
@@ -115,11 +134,24 @@ public class Ghost : MonoBehaviour, IEnemy
         if (Input.GetMouseButtonUp(0))
         {
             _canMove = true;
+            StopAllCoroutines();
             StartCoroutine(Move());
         }
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
+
+            if (Vector2.Distance(transform.position, _target.transform.position) <= 5f)
+            {
+                if (transform.localScale.x <= 0.4f && transform.localScale.y <= 0.4f)
+                {
+
+                }
+                else
+                {
+                    transform.localScale -= new Vector3(0.005f, 0.005f, 0f);
+                }
+            }
         }
     }
 
@@ -132,5 +164,15 @@ public class Ghost : MonoBehaviour, IEnemy
     public Vector3 GetGhostStartPos()
     {
         return _startPos;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.name == "Trigger")
+        {
+            _canMove = true;
+            StopAllCoroutines();
+            StartCoroutine(Move());
+        }
     }
 }

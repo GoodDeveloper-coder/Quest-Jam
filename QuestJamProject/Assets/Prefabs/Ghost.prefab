@@ -95,7 +95,9 @@ GameObject:
   - component: {fileID: 4884124647638018298}
   - component: {fileID: 4884124647638018299}
   - component: {fileID: 4884124647638018296}
+  - component: {fileID: 3093143748722519764}
   - component: {fileID: 4795898209418526259}
+  - component: {fileID: 3246039059856034040}
   m_Layer: 6
   m_Name: Ghost
   m_TagString: Enemy
@@ -187,6 +189,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &3093143748722519764
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884124647638018297}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!114 &4795898209418526259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,13 +223,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOfGhosts: 0
-  _ghostSpriteRenderer: {fileID: 4884124647638018299}
-  _angerGhostSprite: {fileID: -2099502421, guid: 5b1a3d545e00adb4d954d33ded5e6598, type: 3}
-  _depressionGhostSprite: {fileID: -1896913849, guid: 76ae09bf81281ac4cab9fada6249e01c, type: 3}
-  _anxietyGhostSprite: {fileID: -588153417, guid: 2bfbf800589ded4478080f9d14cad5d8, type: 3}
-  _envyGhostSprite: {fileID: -588153417, guid: 2bfbf800589ded4478080f9d14cad5d8, type: 3}
+  _ghostAnimator: {fileID: 3246039059856034040}
+  _angerGhostAnimator: {fileID: 9100000, guid: 72f6b8981314947499c69137091b9812, type: 2}
+  _depressionGhostAnimator: {fileID: 9100000, guid: 168db5039d7f41b419986d7bb90b447a, type: 2}
+  _anxietyGhostAnimator: {fileID: 9100000, guid: cd22853db0a555643934f3c3d8f320ad, type: 2}
+  _envyGhostAnimator: {fileID: 9100000, guid: 36de263788789fd4cb258110a55bc2b6, type: 2}
   _minimapSpriteRenderer: {fileID: 4846807350541597683}
   _speed: 2
   _waitTime: 1
   _moveSpots: []
+  _spriteRenderer: {fileID: 4884124647638018299}
+  _rigidbody: {fileID: 3093143748722519764}
   _canMove: 1
+--- !u!95 &3246039059856034040
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884124647638018297}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36de263788789fd4cb258110a55bc2b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
