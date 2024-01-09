@@ -2,44 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private TextMeshProUGUI _timer;
-    public int _milli, _second;
-    public bool _isTiming = true;
 
-    void Awake()
+    [SerializeField] private TextMeshProUGUI uiText;
+
+    public int Duration;
+
+    private int remainingDuration;
+
+    private bool Pause;
+
+    private void Start()
     {
-        _timer = GetComponent<TextMeshProUGUI>();
-        StartCoroutine(timing());
+        Being(Duration);
     }
 
-    void Update()
+    private void Being(int Second)
     {
-        if (_milli < 10)
-        {
-            _timer.SetText(_second.ToString() + "." + "0" + _milli.ToString());
-        }
-        else
-        {
-            _timer.SetText(_second.ToString() + "." + _milli.ToString());
-        }
+        remainingDuration = Second;
+        StartCoroutine(UpdateTimer());
     }
 
-    IEnumerator timing()
+    private IEnumerator UpdateTimer()
     {
-        yield return new WaitUntil(() => _isTiming);
-        while (_milli != 99 && _isTiming == true)
+        while (remainingDuration >= 0)
         {
-            yield return new WaitForSeconds(0.01f);
-            _milli += 1;
+            if (!Pause)
+            {
+                uiText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
+                remainingDuration--;
+                yield return new WaitForSeconds(1f);
+            }
+            yield return null;
         }
-        if (_isTiming)
-        {
-            _milli = 0;
-            _second += 1;
-            StartCoroutine(timing());
-        }
+        OnEnd();
+    }
+
+    private void OnEnd()
+    {
+        //restart cycle
     }
 }

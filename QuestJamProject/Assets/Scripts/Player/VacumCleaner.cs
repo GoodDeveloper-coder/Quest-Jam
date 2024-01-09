@@ -36,6 +36,8 @@ public class VacumCleaner : MonoBehaviour
     private Vector3 deffaultPos;
     private Vector3 deffaultScale;
 
+    //private float _speedOfSuckUpGhost;
+
     private float _deffaultAttackCooldown;
 
 
@@ -175,6 +177,7 @@ public class VacumCleaner : MonoBehaviour
 
 
                     case Ghost.TypesOfGhosts.Envy:
+                        StartCoroutine(EnvyGhostEffect());
                         //undecided on effect
                         break;
                 }
@@ -204,6 +207,13 @@ public class VacumCleaner : MonoBehaviour
         _attackCooldown -= _attackCooldown / 2;
         yield return new WaitForSeconds(4f);
         _attackCooldown = _deffaultAttackCooldown;
+    }
+
+    IEnumerator EnvyGhostEffect()
+    {
+
+        yield return new WaitForSeconds(4f);
+
     }
 
     #endregion
