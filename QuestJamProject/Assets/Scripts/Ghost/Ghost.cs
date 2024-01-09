@@ -26,7 +26,7 @@ public class Ghost : MonoBehaviour, IEnemy
 
     [SerializeField] float _speed;
     [SerializeField] float _waitTime;
-    [SerializeField] List<Transform> _moveSpots;
+    public List<Transform> _moveSpots;
 
     private int randomSpot;
 
@@ -34,16 +34,19 @@ public class Ghost : MonoBehaviour, IEnemy
 
     public bool _canMove = true;
 
+    private Vector3 _startPos;
+
     #endregion
 
     #region Monobehaviour Functions
 
     void Start()
     {
+        _startPos = transform.position;
         _ghostSpriteRenderer = GetComponent<SpriteRenderer>();
         _minimapSpriteRenderer.enabled = true;
-        InitializeGhost();
-        StartCoroutine(Move());
+        //InitializeGhost();
+        //StartCoroutine(Move());
     }
 
     void Update()
@@ -85,6 +88,8 @@ public class Ghost : MonoBehaviour, IEnemy
                 _ghostSpriteRenderer.sprite = _envyGhostSprite;
                 break;
         }
+
+        StartCoroutine(Move());
     }
     #endregion
 
@@ -122,5 +127,10 @@ public class Ghost : MonoBehaviour, IEnemy
     {
         _target = suckUpPosition;
         _canMove = false;
+    }
+
+    public Vector3 GetGhostStartPos()
+    {
+        return _startPos;
     }
 }
