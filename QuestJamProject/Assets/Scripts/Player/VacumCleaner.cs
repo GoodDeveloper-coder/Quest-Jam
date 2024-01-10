@@ -40,6 +40,7 @@ public class VacumCleaner : MonoBehaviour
 
     private float _deffaultAttackCooldown;
 
+    private Ghost ghostInVacuum;
 
     [SerializeField] float minTimeBetweenVacumCleanerWorkingSound = 0.3f; 
     [SerializeField] float maxTimeBetweenCleanerWorkingSound = 0.6f;
@@ -158,6 +159,7 @@ public class VacumCleaner : MonoBehaviour
         {
             if (ghost._canMove == false)
             {
+                ghostInVacuum = ghost;
                 switch (ghost._typeOfGhosts)
                 {
                     case Ghost.TypesOfGhosts.Anger:
@@ -217,4 +219,11 @@ public class VacumCleaner : MonoBehaviour
     }
 
     #endregion
+
+    public Ghost GetGhost()
+    {
+        Ghost g = ghostInVacuum;
+        ghostInVacuum = null;
+        return g;
+    }
 }
