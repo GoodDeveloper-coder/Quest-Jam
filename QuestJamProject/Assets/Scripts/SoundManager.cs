@@ -26,21 +26,21 @@ public class SoundManager : MonoBehaviour
 
     public void PlayWinSound()
     {
-        _soundAudioSource.PlayOneShot(_winSound, 0.5f);
+        _soundAudioSource.PlayOneShot(_winSound, 0.6f);
     }
 
     public void PlayVacumCleanerWorkSound()
     {
-        _soundAudioSource.PlayOneShot(_vacumCleanerWorkSound, 0.1f);
+        _soundAudioSource.PlayOneShot(_vacumCleanerWorkSound, 0.05f);
     }
 
     public void PlayVacumOnOffSound()
     {
-        _soundAudioSource.PlayOneShot(_vacumOnOffSound, 0.4f);
+        _soundAudioSource.PlayOneShot(_vacumOnOffSound, 0.05f);
     }
 
     public void PlayGhostCaughtSound()
     {
-        _soundAudioSource.PlayOneShot(_ghostCaught[Random.Range(0, _ghostCaught.Count)], 0.5f);
+        _soundAudioSource.PlayOneShot(_ghostCaught[Random.Range(0, _ghostCaught.Count)], 0.6f);
     }
 }

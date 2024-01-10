@@ -113,7 +113,7 @@ public class Ghost : MonoBehaviour, IEnemy
 
     public IEnumerator Move()
     {
-        /*
+        
         while (_canMove)
         {
             randomSpot = Random.Range(0, _moveSpots.Count);
@@ -134,7 +134,8 @@ public class Ghost : MonoBehaviour, IEnemy
 
             yield return new WaitForSeconds(_waitTime);
         }
-        */
+        
+        /*
         while (_canMove && !locked)
         {
             if (path == null) yield return null;
@@ -150,6 +151,7 @@ public class Ghost : MonoBehaviour, IEnemy
                 yield return new WaitForSeconds(_waitTime);
             }
         }
+        */
     }
 
     public void MoveToVacumCleaner()
@@ -193,15 +195,13 @@ public class Ghost : MonoBehaviour, IEnemy
     }
 
     private void OnTriggerExit2D(Collider2D other)
-    {
-        
-        if (other.name == "Trigger")
+    {     
+        if (other.transform.name == "Trigger")
         {
             _canMove = true;
             StopAllCoroutines();
             StartCoroutine(Move());
-        }
-        
+        }     
     }
 
     public void SetPath(Vector3[] p)
