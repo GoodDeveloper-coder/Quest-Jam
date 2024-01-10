@@ -40,6 +40,7 @@ public class GameplayManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         panelResetCycle.SetActive(false);
         panelScore.SetActive(false);
         ghosts = new Ghost[ghostsPerColour * ghostPrefabs.Length];
@@ -73,11 +74,13 @@ public class GameplayManager : MonoBehaviour
             ghosts[i].SetLocked(true);
         }
         ghostsCaught = new bool[ghosts.Length];
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (!ticking) return;
         Ghost ghost = vacuum.GetGhost();
         if (ghost != null)
@@ -110,6 +113,7 @@ public class GameplayManager : MonoBehaviour
         }
         elapsedSeconds += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.R)) ResetCycle();
+        */
     }
 
     public void StartCycle()
@@ -125,6 +129,7 @@ public class GameplayManager : MonoBehaviour
 
     private IEnumerator IStartCycle()
     {
+        /*
         int[] ghostsLeft = new int[ghostPrefabs.Length];
         player.SetLocked(false);
         for (int i = 0; i < ghosts.Length; i++)
@@ -148,11 +153,14 @@ public class GameplayManager : MonoBehaviour
         }
         ticking = false;
         panelResetCycle.SetActive(true);
+        */
+        yield return null;
         StartCoroutine(IResetCycle());
     }
 
     private IEnumerator IResetCycle()
     {
+        /*
         ticking = false;
         player.SetLocked(true);
         foreach (Ghost ghost in ghosts) ghost.SetLocked(true);
@@ -180,6 +188,8 @@ public class GameplayManager : MonoBehaviour
         cameraPosition.x = player.transform.position.x;
         cameraPosition.y = player.transform.position.y;
         Camera.main.transform.position = cameraPosition;
+        */
+        yield return null;
         StartCoroutine(IStartCycle());
     }
 }
