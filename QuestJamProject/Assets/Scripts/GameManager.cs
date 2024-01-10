@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnGhosts();
+        //SpawnGhosts();
 
         Score = 0;
 
@@ -61,10 +61,10 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RestartCycle()
     {
-        StartCoroutine(StartFades());
+        //StartCoroutine(StartFades());
 
         yield return new WaitForSeconds(1f);
-
+        /*
         GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (GameObject ghost in ghosts)
@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
         }
 
         _player.transform.position = _playerStartPos;
+        */
     }
 
     #endregion
@@ -85,13 +86,13 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator StartFades()
     {
-        _fadeIn.SetActive(false);
-        _fadeIn.SetActive(true);
+        //_fadeIn.SetActive(false);
+        //_fadeIn.SetActive(true);
         yield return new WaitForSeconds(1f);
-        _fadeOut.SetActive(true);
-        _fadeIn.SetActive(false);
+        //_fadeOut.SetActive(true);
+        //_fadeIn.SetActive(false);
         yield return new WaitForSeconds(1f);
-        _fadeOut.SetActive(false);
+        //_fadeOut.SetActive(false);
     }
 
     #endregion

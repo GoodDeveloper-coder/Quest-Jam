@@ -40,6 +40,10 @@ public class Ghost : MonoBehaviour, IEnemy
 
     private Vector3 _deffaultScale;
 
+    private Vector3[] path;
+    private int pathIndex;
+    private bool locked;
+
     #endregion
 
     #region Monobehaviour Functions
@@ -51,7 +55,7 @@ public class Ghost : MonoBehaviour, IEnemy
         _ghostAnimator = GetComponent<Animator>();
         _minimapSpriteRenderer.enabled = true;
         //InitializeGhost();
-        //StartCoroutine(Move());
+        StartCoroutine(Move());
     }
 
     void Update()
@@ -63,6 +67,8 @@ public class Ghost : MonoBehaviour, IEnemy
             StartCoroutine(Move());
         }
         */
+
+        if (locked) return;
 
         if (_canMove == false)
         {
@@ -101,12 +107,13 @@ public class Ghost : MonoBehaviour, IEnemy
                 break;
         }
 
-        StartCoroutine(Move());
+        //StartCoroutine(Move());
     }
     #endregion
 
     public IEnumerator Move()
     {
+        /*
         while (_canMove)
         {
             randomSpot = Random.Range(0, _moveSpots.Count);
@@ -127,10 +134,27 @@ public class Ghost : MonoBehaviour, IEnemy
 
             yield return new WaitForSeconds(_waitTime);
         }
+        */
+        while (_canMove && !locked)
+        {
+            if (path == null) yield return null;
+            else
+            {
+                Vector3 target = path[pathIndex];
+                while (Vector3.Distance(transform.position, target) > float.Epsilon)
+                {
+                    if (_canMove) transform.position = Vector3.MoveTowards(transform.position, target, _speed * Time.deltaTime);
+                    yield return null;
+                }
+                pathIndex = (pathIndex + 1) % path.Length;
+                yield return new WaitForSeconds(_waitTime);
+            }
+        }
     }
 
     public void MoveToVacumCleaner()
     {
+        
         if (Input.GetMouseButtonUp(0))
         {
             _canMove = true;
@@ -153,6 +177,8 @@ public class Ghost : MonoBehaviour, IEnemy
                 }
             }
         }
+        
+        //while ((transform.position - _target.transform.position).magnitude > float.Epsilon && !locked) transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
     }
 
     public void SetGhostFields(Transform suckUpPosition)
@@ -168,11 +194,24 @@ public class Ghost : MonoBehaviour, IEnemy
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        
         if (other.name == "Trigger")
         {
             _canMove = true;
             StopAllCoroutines();
             StartCoroutine(Move());
         }
+        
+    }
+
+    public void SetPath(Vector3[] p)
+    {
+        if (p == null) return;
+        path = p;
+    }
+
+    public void SetLocked()
+    {
+        locked = true;
     }
 }

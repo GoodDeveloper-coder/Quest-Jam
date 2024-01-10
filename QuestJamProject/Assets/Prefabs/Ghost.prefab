@@ -183,7 +183,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -233,7 +233,6 @@ MonoBehaviour:
   _waitTime: 1
   _moveSpots: []
   _spriteRenderer: {fileID: 4884124647638018299}
-  _rigidbody: {fileID: 3093143748722519764}
   _canMove: 1
 --- !u!95 &3246039059856034040
 Animator:

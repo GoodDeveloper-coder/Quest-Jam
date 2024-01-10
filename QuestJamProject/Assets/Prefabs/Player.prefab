@@ -4862,6 +4862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 0}
   _soundManager: {fileID: 0}
+  _ghostSuckUpPos: {fileID: 0}
   _spriteRenderer: {fileID: 8548593407502537997}
   _particles: {fileID: 0}
   _playerMovement: {fileID: 6015713805542343185}
@@ -4963,7 +4964,7 @@ GameObject:
   - component: {fileID: 6015713805542343185}
   - component: {fileID: 3423594347099724955}
   - component: {fileID: 2186403699495560019}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5095,19 +5096,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6015713805542343186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d312ab0d92c7d4c83c3aaeae8921fc, type: 3}
+  m_Script: {fileID: 11500000, guid: cde3b8b5a7f81444095edbe19561b40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInputX: {fileID: -7766141081142390232, guid: 0eca2df9ddb7c3e43b6eedd8d35682fd, type: 3}
   _moveInputY: {fileID: 6664391004064443037, guid: 0eca2df9ddb7c3e43b6eedd8d35682fd, type: 3}
-  _findGhostSound: {fileID: 2186403699495560019}
+  _findGhostSound: {fileID: 0}
   _footSteps:
-  - {fileID: 8300000, guid: d6cff86172feebc43b3c678e615882a2, type: 3}
-  - {fileID: 8300000, guid: 7bf7495b31bcd0546a0cd145398cf7c4, type: 3}
-  - {fileID: 8300000, guid: bdd35081e80212243982f0be55c90a91, type: 3}
-  - {fileID: 8300000, guid: 3c92fdd004e5b4b489130d0264cc1572, type: 3}
-  - {fileID: 8300000, guid: 47f8dbbcb8a8e784f8010ecddfec18c5, type: 3}
-  - {fileID: 8300000, guid: 77e0a9497a568484fba81d6c5f99a342, type: 3}
+  - {fileID: 8300000, guid: 42bb25442c679e74ea21a7c33b394925, type: 3}
+  - {fileID: 8300000, guid: 4e8eea3fdf07ff145b26a28e057f29b7, type: 3}
+  - {fileID: 8300000, guid: 7d2e096c5da8af542a68e541d1fa5b50, type: 3}
+  - {fileID: 8300000, guid: c898152b50d7f694e9947ed604a81d3d, type: 3}
+  - {fileID: 8300000, guid: 13a5264b8c965334ba962c010c635a0b, type: 3}
+  - {fileID: 8300000, guid: 5d8ba1de18bf19f4684cca566514e94b, type: 3}
   minTimeBetweenFootsteps: 0.3
   maxTimeBetweenFootsteps: 0.6
   _walkSpeed: 2
@@ -5470,7 +5471,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.2770114, g: 0.7830189, b: 0.27917415, a: 1}
+  m_Color: {r: 0.2770114, g: 0.7830189, b: 0.27917415, a: 0.2509804}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
