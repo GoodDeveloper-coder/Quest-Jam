@@ -188,6 +188,7 @@ public class VacumCleaner : MonoBehaviour
                 Destroy(ghost.gameObject);
                 _soundManager.PlayGhostCaughtSound();
                 _gameManager.AddScore(5);
+                _gameManager.UpdateUICountOfGhosts(ghost._typeOfGhosts);
             }
         }
     }

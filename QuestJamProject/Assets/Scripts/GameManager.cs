@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,11 +12,22 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _fadeIn;
     [SerializeField] GameObject _fadeOut;
 
+    [SerializeField] List<GameObject> _objectToOpenIfWin;
+
+    [SerializeField] List<GameObject> _objectToResetIfWin;
+
     [SerializeField] private GameObject _ghostPrefab;
     [SerializeField] private List<Transform> _ghostsSpawnPositions;
     [SerializeField] private List<Transform> _ghostMoveSpots;
 
+    [SerializeField] private List<Transform> _ghostPatruleMarshroots;
+
     [SerializeField] private GameObject _player;
+
+    [SerializeField] private Timer _timer;
+
+    [SerializeField] List<TextMeshProUGUI> _countOfGhostsUIText;
+
     private Vector3 _playerStartPos;
 
     private int _score;
@@ -34,11 +47,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //SpawnGhosts();
+        SpawnGhosts();
 
         Score = 0;
 
         _playerStartPos = _player.transform.position;
+
+        SetUICountOfGhosts();
     }
 
 
@@ -48,6 +63,8 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(RestartCycle());
         }
+
+        CheckPlayerWin();
     }
 
 
@@ -61,10 +78,10 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RestartCycle()
     {
-        //StartCoroutine(StartFades());
+        StartCoroutine(StartFades());
 
         yield return new WaitForSeconds(1f);
-        /*
+        
         GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (GameObject ghost in ghosts)
@@ -77,7 +94,7 @@ public class GameManager : MonoBehaviour
         }
 
         _player.transform.position = _playerStartPos;
-        */
+        _timer.Being(_timer.Duration);
     }
 
     #endregion
@@ -86,13 +103,13 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator StartFades()
     {
-        //_fadeIn.SetActive(false);
-        //_fadeIn.SetActive(true);
+        _fadeIn.SetActive(false);
+        _fadeIn.SetActive(true);
         yield return new WaitForSeconds(1f);
-        //_fadeOut.SetActive(true);
-        //_fadeIn.SetActive(false);
+        _fadeOut.SetActive(true);
+        _fadeIn.SetActive(false);
         yield return new WaitForSeconds(1f);
-        //_fadeOut.SetActive(false);
+        _fadeOut.SetActive(false);
     }
 
     #endregion
@@ -101,6 +118,8 @@ public class GameManager : MonoBehaviour
 
     void SpawnGhosts()
     {
+        int indexOfPatruleMarshroot = 0;
+
         foreach (Transform spawnPos in _ghostsSpawnPositions)
         {
             int spawnOrNo = Random.Range(0, 2);
@@ -133,20 +152,31 @@ public class GameManager : MonoBehaviour
                 Ghost ghost = Instantiate(_ghostPrefab, spawnPos.position, Quaternion.identity).GetComponent<Ghost>();
                 ghost._typeOfGhosts = typeOfGhost;
 
+                /*
                 foreach(Transform moveSpot in _ghostMoveSpots)
                 {
                     int moveSpotChance = Random.Range(0, 3);
                     Debug.Log(moveSpotChance);
                     if (moveSpotChance == 1)
                     {
-                        ghost._moveSpots.Add(moveSpot);
+                        if (ghost._moveSpots.Count < 2)
+                        {
+                            ghost._moveSpots.Add(moveSpot);
+                        }
                     }
                 }
 
-                if (ghost._moveSpots.Count >= 0)
+                if (ghost._moveSpots.Count <= 0)
                 {
                     ghost._moveSpots.Add(_ghostMoveSpots[Random.Range(0, _ghostMoveSpots.Count)]);
                 }
+                */
+
+                indexOfPatruleMarshroot += 2;
+
+                ghost.transform.position = _ghostPatruleMarshroots[indexOfPatruleMarshroot - Random.Range(1, 3)].position;
+                ghost._moveSpots.Add(_ghostPatruleMarshroots[indexOfPatruleMarshroot - 2]);
+                ghost._moveSpots.Add(_ghostPatruleMarshroots[indexOfPatruleMarshroot - 1]);
 
                 ghost.InitializeGhost();
             }
@@ -156,4 +186,105 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    void CheckPlayerWin()
+    {
+        GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (ghosts.Count() == 0)
+        {
+            foreach(GameObject winObject in _objectToOpenIfWin) 
+            {
+                winObject.SetActive(true);
+            }
+
+            foreach (GameObject winObject in _objectToResetIfWin)
+            {
+                winObject.SetActive(false);
+            }
+
+            foreach(GameObject ghostToReset in ghosts)
+            {
+                ghostToReset.SetActive(false);
+            }
+        }
+    }
+
+    public void UpdateUICountOfGhosts(Ghost.TypesOfGhosts typeOfGhost)
+    {
+
+        int countOfAngerGhosts;
+
+        int countOfDepressionGhosts;
+
+        int countOfAnxietyGhosts;
+
+        int countOfEnvyGhosts;
+
+        switch (typeOfGhost)
+        {
+            case Ghost.TypesOfGhosts.Anger:
+                int.TryParse(_countOfGhostsUIText[0].text, out countOfAngerGhosts);
+
+                _countOfGhostsUIText[0].text = $"{countOfAngerGhosts - 1}";
+                break;
+
+            case Ghost.TypesOfGhosts.Depression:
+                int.TryParse(_countOfGhostsUIText[1].text, out countOfDepressionGhosts);
+
+                _countOfGhostsUIText[1].text = $"{countOfDepressionGhosts - 1}";
+                break;
+
+            case Ghost.TypesOfGhosts.Anxiety:
+                int.TryParse(_countOfGhostsUIText[2].text, out countOfAnxietyGhosts);
+
+                _countOfGhostsUIText[2].text = $"{countOfAnxietyGhosts - 1}";
+                break;
+
+            case Ghost.TypesOfGhosts.Envy:
+                int.TryParse(_countOfGhostsUIText[3].text, out countOfEnvyGhosts);
+
+                _countOfGhostsUIText[3].text = $"{countOfEnvyGhosts - 1}";
+                break;
+        }
+         
+    }
+
+    void SetUICountOfGhosts()
+    {
+
+        Ghost[] allGhosts = GameObject.FindObjectsOfType<Ghost>();
+        foreach (Ghost ghost in allGhosts)
+        {
+            switch (ghost._typeOfGhosts)
+            {
+                case Ghost.TypesOfGhosts.Anger:
+                    int countOfAngerGhosts;
+                    int.TryParse(_countOfGhostsUIText[0].text, out countOfAngerGhosts);
+
+                    _countOfGhostsUIText[0].text = $"{countOfAngerGhosts + 1}";
+                    break;
+
+                case Ghost.TypesOfGhosts.Depression:
+                    int countOfDepressionGhosts;
+                    int.TryParse(_countOfGhostsUIText[1].text, out countOfDepressionGhosts);
+
+                    _countOfGhostsUIText[1].text = $"{countOfDepressionGhosts + 1}";
+                    break;
+
+                case Ghost.TypesOfGhosts.Anxiety:
+                    int countOfAnxietyGhosts;
+                    int.TryParse(_countOfGhostsUIText[2].text, out countOfAnxietyGhosts);
+
+                    _countOfGhostsUIText[2].text = $"{countOfAnxietyGhosts + 1}";
+                    break;
+
+                case Ghost.TypesOfGhosts.Envy:
+                    int countOfEnvyGhosts;
+                    int.TryParse(_countOfGhostsUIText[3].text, out countOfEnvyGhosts);
+
+                    _countOfGhostsUIText[3].text = $"{countOfEnvyGhosts + 1}";
+                    break;
+            }
+        }
+    }
 }

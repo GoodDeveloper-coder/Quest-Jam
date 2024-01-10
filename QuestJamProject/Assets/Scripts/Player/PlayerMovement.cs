@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (locked) return;
+        //if (locked) return;
 
         _moveVector.x = _moveInputX.action.ReadValue<float>();
         _moveVector.y = _moveInputY.action.ReadValue<float>();
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             if (Time.time - timeSinceLastFootstep >= Random.Range(minTimeBetweenFootsteps, maxTimeBetweenFootsteps))
             {
                 // Play a random footstep sound from the array
-                _findGhostSound.PlayOneShot(_footSteps[Random.Range(0, _footSteps.Count)]);
+                _findGhostSound.PlayOneShot(_footSteps[Random.Range(0, _footSteps.Count)], 1f);
 
                 timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound
             }

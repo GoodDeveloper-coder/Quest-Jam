@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI uiText;
 
+    [SerializeField] GameManager _gameManager;
+
     public int Duration;
 
     private int remainingDuration;
@@ -21,13 +23,13 @@ public class Timer : MonoBehaviour
         Being(Duration);
     }
 
-    private void Being(int Second)
+    public void Being(int Second)
     {
         remainingDuration = Second;
         StartCoroutine(UpdateTimer());
     }
 
-    private IEnumerator UpdateTimer()
+    public IEnumerator UpdateTimer()
     {
         while (remainingDuration >= 0)
         {
@@ -44,6 +46,6 @@ public class Timer : MonoBehaviour
 
     private void OnEnd()
     {
-        //restart cycle
+        _gameManager.StartCoroutine(_gameManager.RestartCycle());
     }
 }
