@@ -42,6 +42,7 @@ public class Ghost : MonoBehaviour, IEnemy
 
     private Vector3[] path;
     private int pathIndex;
+    private bool locked;
 
     #endregion
 
@@ -66,6 +67,8 @@ public class Ghost : MonoBehaviour, IEnemy
             StartCoroutine(Move());
         }
         */
+
+        if (locked) return;
 
         if (_canMove == false)
         {
@@ -104,7 +107,7 @@ public class Ghost : MonoBehaviour, IEnemy
                 break;
         }
 
-        StartCoroutine(Move());
+        //StartCoroutine(Move());
     }
     #endregion
 
@@ -132,7 +135,7 @@ public class Ghost : MonoBehaviour, IEnemy
             yield return new WaitForSeconds(_waitTime);
         }
         */
-        while (_canMove)
+        while (_canMove && !locked)
         {
             if (path == null) yield return null;
             else
@@ -175,7 +178,7 @@ public class Ghost : MonoBehaviour, IEnemy
             }
         }
         */
-        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
+        while ((transform.position - _target.transform.position).magnitude > float.Epsilon && !locked) transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
     }
 
     public void SetGhostFields(Transform suckUpPosition)
@@ -205,5 +208,10 @@ public class Ghost : MonoBehaviour, IEnemy
     {
         if (p == null) return;
         path = p;
+    }
+
+    public void SetLocked()
+    {
+        locked = true;
     }
 }

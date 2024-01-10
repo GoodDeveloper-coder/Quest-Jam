@@ -7624,6 +7624,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1868511332}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1568114273}
         m_TargetAssemblyTypeName: GameplayManager, Assembly-CSharp
         m_MethodName: StartCycle
@@ -29331,6 +29343,7 @@ GameObject:
   - component: {fileID: 1177810028}
   - component: {fileID: 1177810030}
   - component: {fileID: 1177810029}
+  - component: {fileID: 1177810031}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -33844,6 +33857,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1177810031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177810027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cd43ca865f0cc4bba1fb572ca500c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsInCycle: 1
+  minOpacity: 0.5
+  maxOpacity: 0.75
 --- !u!1 &1208685512
 GameObject:
   m_ObjectHideFlags: 0
@@ -36767,6 +36795,7 @@ MonoBehaviour:
   panelHUD: {fileID: 1613652504}
   panelResetCycle: {fileID: 1330835319}
   panelScore: {fileID: 1260783163}
+  warp: {fileID: 1868511332}
   timer:
   - {fileID: 1093028463}
   - {fileID: 1701398354}
@@ -37829,7 +37858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1868511333
 Grid:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private GameObject panelResetCycle;
     [SerializeField] private GameObject panelScore;
 
+    [SerializeField] private GameObject warp;
+
     [SerializeField] private GameObject[] timer;
 
     [SerializeField] private TextMeshProUGUI[] textGhostsLeft;
@@ -101,6 +103,7 @@ public class GameplayManager : MonoBehaviour
                 panelHUD.SetActive(false);
                 panelResetCycle.SetActive(false);
                 panelScore.SetActive(true);
+                warp.SetActive(true);
                 int minutes = (int)elapsedSeconds / 60;
                 int seconds = (int)elapsedSeconds % 60;
                 float ghostsPerCycle = totalGhostsCaught * 1f / cycles;
@@ -160,6 +163,7 @@ public class GameplayManager : MonoBehaviour
                         ghosts[i]._typeOfGhosts = Ghost.TypesOfGhosts.Anxiety;
                         break;
                 }
+                ghosts[i].InitializeGhost();
                 List<Vector3> path = new List<Vector3>();
                 string[] split = ghostPaths[i].Split(',');
                 Vector3 v = ghostStartPositions[i];
@@ -190,12 +194,15 @@ public class GameplayManager : MonoBehaviour
     {
         ticking = false;
         player.SetLocked(true);
+        for (int i = 0; i < ghosts.Length; i++) if (ghosts[i] != null) ghosts[i].SetLocked();
         panelHUD.SetActive(false);
         panelResetCycle.SetActive(true);
+        warp.SetActive(true);
         yield return new WaitForSeconds(secondsToResetCycle);
         player.ResetPosition();
         panelHUD.SetActive(true);
         panelResetCycle.SetActive(false);
+        warp.SetActive(false);
         foreach (GameObject t in timer) t.SetActive(true);
         Vector3 cameraPosition = Camera.main.transform.position;
         cameraPosition.x = player.transform.position.x;
