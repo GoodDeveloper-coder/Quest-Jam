@@ -34179,6 +34179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 1259003885}
+  _gameManager: {fileID: 0}
   Duration: 5
 --- !u!114 &1259003885
 MonoBehaviour:
@@ -38582,6 +38583,7 @@ GameObject:
   - component: {fileID: 2144390686}
   - component: {fileID: 2144390685}
   - component: {fileID: 2144390684}
+  - component: {fileID: 2144390689}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -38668,6 +38670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 127170601}
+  _itsMnimap: 0
   _smoothTime: 0.2
 --- !u!114 &2144390685
 MonoBehaviour:
@@ -38684,6 +38687,8 @@ MonoBehaviour:
   _scoreText: {fileID: 1041283123}
   _fadeIn: {fileID: 1384323241}
   _fadeOut: {fileID: 654710006}
+  _objectToOpenIfWin: []
+  _objectToResetIfWin: []
   _ghostPrefab: {fileID: 4884124647638018297, guid: b58d79aae24f34f43a7230d23ac62b9a, type: 3}
   _ghostsSpawnPositions:
   - {fileID: 299457509}
@@ -38700,7 +38705,10 @@ MonoBehaviour:
   - {fileID: 1066931983}
   - {fileID: 338561798}
   - {fileID: 1164615342}
+  _ghostPatruleMarshroots: []
   _player: {fileID: 127170601}
+  _timer: {fileID: 0}
+  _countOfGhostsUIText: []
 --- !u!114 &2144390686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38925,6 +38933,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2144390689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144390680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 2144390683}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 329
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 3
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &2147234737
 GameObject:
   m_ObjectHideFlags: 0
