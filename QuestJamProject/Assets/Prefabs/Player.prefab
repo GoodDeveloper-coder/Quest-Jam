@@ -5102,7 +5102,13 @@ MonoBehaviour:
   _moveInputX: {fileID: -7766141081142390232, guid: 0eca2df9ddb7c3e43b6eedd8d35682fd, type: 3}
   _moveInputY: {fileID: 6664391004064443037, guid: 0eca2df9ddb7c3e43b6eedd8d35682fd, type: 3}
   _findGhostSound: {fileID: 0}
-  _footSteps: []
+  _footSteps:
+  - {fileID: 8300000, guid: 42bb25442c679e74ea21a7c33b394925, type: 3}
+  - {fileID: 8300000, guid: 4e8eea3fdf07ff145b26a28e057f29b7, type: 3}
+  - {fileID: 8300000, guid: 7d2e096c5da8af542a68e541d1fa5b50, type: 3}
+  - {fileID: 8300000, guid: c898152b50d7f694e9947ed604a81d3d, type: 3}
+  - {fileID: 8300000, guid: 13a5264b8c965334ba962c010c635a0b, type: 3}
+  - {fileID: 8300000, guid: 5d8ba1de18bf19f4684cca566514e94b, type: 3}
   minTimeBetweenFootsteps: 0.3
   maxTimeBetweenFootsteps: 0.6
   _walkSpeed: 2

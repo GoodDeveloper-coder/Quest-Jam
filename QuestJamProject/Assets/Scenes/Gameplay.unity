@@ -39288,6 +39288,14 @@ PrefabInstance:
       propertyPath: _walkSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6015713805542343185, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
+      propertyPath: _findGhostSound
+      value: 
+      objectReference: {fileID: 6015713805619149377}
+    - target: {fileID: 6015713805542343185, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
+      propertyPath: _footSteps.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6015713805542343186, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
       propertyPath: m_Name
       value: Player
@@ -39396,3 +39404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde3b8b5a7f81444095edbe19561b40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &6015713805619149377 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2186403699495560019, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
+  m_PrefabInstance: {fileID: 6015713805619149371}
+  m_PrefabAsset: {fileID: 0}

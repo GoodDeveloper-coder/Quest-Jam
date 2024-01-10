@@ -154,7 +154,7 @@ public class Ghost : MonoBehaviour, IEnemy
 
     public void MoveToVacumCleaner()
     {
-        /*
+        
         if (Input.GetMouseButtonUp(0))
         {
             _canMove = true;
@@ -177,8 +177,8 @@ public class Ghost : MonoBehaviour, IEnemy
                 }
             }
         }
-        */
-        while ((transform.position - _target.transform.position).magnitude > float.Epsilon && !locked) transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
+        
+        //while ((transform.position - _target.transform.position).magnitude > float.Epsilon && !locked) transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
     }
 
     public void SetGhostFields(Transform suckUpPosition)
@@ -194,14 +194,14 @@ public class Ghost : MonoBehaviour, IEnemy
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        /*
+        
         if (other.name == "Trigger")
         {
             _canMove = true;
             StopAllCoroutines();
             StartCoroutine(Move());
         }
-        */
+        
     }
 
     public void SetPath(Vector3[] p)
