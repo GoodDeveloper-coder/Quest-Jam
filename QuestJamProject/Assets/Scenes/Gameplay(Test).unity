@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 54166945}
   - component: {fileID: 54166947}
   - component: {fileID: 54166946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_60 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 153299540}
   - component: {fileID: 153299542}
   - component: {fileID: 153299541}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_58 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1754,7 +1754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187181547}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1863,7 +1863,7 @@ GameObject:
   - component: {fileID: 232372604}
   - component: {fileID: 232372606}
   - component: {fileID: 232372605}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_14 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1973,7 +1973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243256429}
   - component: {fileID: 243256430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_68 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3457,7 +3457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466217331}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TablesWithPanels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3645,7 +3645,7 @@ GameObject:
   - component: {fileID: 508424625}
   - component: {fileID: 508424627}
   - component: {fileID: 508424626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21463,7 +21463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 719828957}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21576,7 +21576,7 @@ GameObject:
   - component: {fileID: 733474156}
   - component: {fileID: 733474158}
   - component: {fileID: 733474157}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_42 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22101,7 +22101,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -22111,9 +22111,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -22328,7 +22328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 820672278}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GreenCapsules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22365,7 +22365,7 @@ GameObject:
   - component: {fileID: 823636246}
   - component: {fileID: 823636248}
   - component: {fileID: 823636247}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22796,7 +22796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 876704825}
   - component: {fileID: 876704826}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23413,7 +23413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 989243268}
   - component: {fileID: 989243269}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23701,7 +23701,7 @@ GameObject:
   - component: {fileID: 1014625943}
   - component: {fileID: 1014625945}
   - component: {fileID: 1014625944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_42 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25428,7 +25428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251606558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Panels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25814,6 +25814,7 @@ GameObject:
   - component: {fileID: 1266123528}
   - component: {fileID: 1266123530}
   - component: {fileID: 1266123531}
+  - component: {fileID: 1266123532}
   m_Layer: 0
   m_Name: Minimap
   m_TagString: Untagged
@@ -25894,6 +25895,66 @@ MonoBehaviour:
   _target: {fileID: 127170601}
   _itsMnimap: 1
   _smoothTime: 0.2
+--- !u!114 &1266123532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266123527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1266123528}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1270141333
 GameObject:
   m_ObjectHideFlags: 0
@@ -26091,7 +26152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1300256720}
   - component: {fileID: 1300256721}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_71
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26300,7 +26361,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -26310,9 +26371,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -27232,7 +27293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1439222848}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MiniThings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28182,7 +28243,7 @@ GameObject:
   - component: {fileID: 1528529164}
   - component: {fileID: 1528529166}
   - component: {fileID: 1528529165}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_58 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28994,7 +29055,7 @@ GameObject:
   - component: {fileID: 1600688238}
   - component: {fileID: 1600688240}
   - component: {fileID: 1600688239}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_60 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29189,7 +29250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620542242}
   - component: {fileID: 1620542243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_66 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29385,7 +29446,7 @@ GameObject:
   - component: {fileID: 1622658829}
   - component: {fileID: 1622658831}
   - component: {fileID: 1622658830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_60 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29708,7 +29769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1736656132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Panels(Version2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30008,7 +30069,7 @@ GameObject:
   - component: {fileID: 1770597628}
   - component: {fileID: 1770597630}
   - component: {fileID: 1770597629}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30215,7 +30276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1826428032}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30248,7 +30309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1833848938}
   - component: {fileID: 1833848939}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30444,7 +30505,7 @@ GameObject:
   - component: {fileID: 1862715285}
   - component: {fileID: 1862715287}
   - component: {fileID: 1862715286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_42 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30739,7 +30800,7 @@ GameObject:
   - component: {fileID: 1922704914}
   - component: {fileID: 1922704916}
   - component: {fileID: 1922704915}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_58
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31251,7 +31312,7 @@ GameObject:
   - component: {fileID: 2014481079}
   - component: {fileID: 2014481081}
   - component: {fileID: 2014481080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31742,7 +31803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2101430293}
   - component: {fileID: 2101430294}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_71 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31827,7 +31888,7 @@ GameObject:
   - component: {fileID: 2108111438}
   - component: {fileID: 2108111440}
   - component: {fileID: 2108111439}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tilesStuff_60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32047,7 +32108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129423396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closets(Version2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32222,6 +32283,7 @@ GameObject:
   - component: {fileID: 2144390686}
   - component: {fileID: 2144390685}
   - component: {fileID: 2144390684}
+  - component: {fileID: 2144390689}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -32599,6 +32661,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2144390689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144390680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 2144390683}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 544
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 3
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &6015713805619149371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32676,7 +32798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015713805542343185, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
       propertyPath: _walkSpeed
-      value: 3
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 6015713805542343185, guid: dedc822f092d03a478de52c5364a4fff, type: 3}
       propertyPath: _findGhostSound

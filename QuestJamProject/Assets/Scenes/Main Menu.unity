@@ -288,7 +288,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -298,9 +298,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -385,7 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 70056666}
   - component: {fileID: 70056665}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,6 +1116,7 @@ GameObject:
   - component: {fileID: 628844608}
   - component: {fileID: 628844607}
   - component: {fileID: 628844606}
+  - component: {fileID: 628844609}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1189,6 +1190,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &628844609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628844605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 628844608}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 544
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 3
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &638631583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1309,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1258,9 +1319,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1394,7 +1455,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1404,9 +1465,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2363,7 +2424,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2373,9 +2434,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2625,7 +2686,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2635,9 +2696,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c0a7b49f53103874ab68606d34023e5b, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3527,7 +3588,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 14daefb25e920974aa2c269ba3619cb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3839,22 +3900,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'You are stuck in a time loop with the ghosts of your past traumas.  Armed
-    with your trusty vacuum, you must catch them all in order to escape the time
-    loop!
+    with your trusty vacuum, you must catch them all in order to escape the loop!
 
-    Each cycle in the loop lasts a certain amount of time.  At the end
-    of each cycle, you will be automatically sent back to your original position. 
-    You can also start a new cycle manually.
+    Each
+    cycle in the time loop lasts a certain amount of time.  At the end of each cycle,
+    you will be automatically sent back to your original position.  You can also
+    start a new cycle manually.
 
-    If you manage to catch all ghosts
-    of a certain colour within a single cycle, they will vanish for good.  Otherwise,
-    they too will return to their original positions at the beginning of the next
-    cycle.
+    If you manage to catch all ghosts of a certain
+    colour within a single cycle, they will vanish for good.  Otherwise, they too
+    will return to their original positions at the beginning of the next cycle.
 
-    Remember: each ghost follows the same pattern every cycle.
+    Remember:
+    each ghost follows the same pattern every cycle.
 
-    Catch
-    all ghosts to win!'
+    Catch all ghosts to win!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 90cd1c5389389c840b831eeda879685e, type: 2}
   m_sharedMaterial: {fileID: 1690809027303920986, guid: 90cd1c5389389c840b831eeda879685e, type: 2}
