@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         origin = _rb.position;
+        _defaultWalkSpeed = _walkSpeed;
         locked = true;
     }
 
@@ -66,9 +67,6 @@ public class PlayerMovement : MonoBehaviour
                 timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound
             }
         }
-
-
-        _defaultWalkSpeed = _walkSpeed;
     }
 
     private void Move(float speed)

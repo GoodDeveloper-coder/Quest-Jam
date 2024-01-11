@@ -80,7 +80,7 @@ public class Ghost : MonoBehaviour, IEnemy
         {
             if (transform.localScale.x < _deffaultScale.x || transform.localScale.y < _deffaultScale.y)
             {
-                transform.localScale += new Vector3(0.005f, 0.005f, 0f);
+                transform.localScale += new Vector3(0.008f, 0.008f, 0f);
             }
         }
     }
@@ -177,7 +177,7 @@ public class Ghost : MonoBehaviour, IEnemy
                 }
                 else
                 {
-                    transform.localScale -= new Vector3(0.005f, 0.005f, 0f);
+                    transform.localScale -= new Vector3(0.008f, 0.008f, 0f);
                 }
             }
         }
