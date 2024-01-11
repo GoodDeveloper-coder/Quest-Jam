@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     private Vector3 _playerStartPos;
 
-    private int _score;
+    [SerializeField] private int _score;
 
     public int Score
     {
