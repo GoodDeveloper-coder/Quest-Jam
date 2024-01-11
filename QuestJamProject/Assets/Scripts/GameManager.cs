@@ -28,6 +28,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] List<TextMeshProUGUI> _countOfGhostsUIText;
 
+    [SerializeField] TextMeshProUGUI _timeTakenUIText;
+    [SerializeField] TextMeshProUGUI _ghostsCaughtPerCycleUIText;
+    [SerializeField] TextMeshProUGUI _finalScoreUIText;
+    [SerializeField] TextMeshProUGUI _personalBestUIText;
+
+    private float totalSeconds;
+    private int totalGhostsCaught;
+    private int cycles;
+    private bool paused;
+
     private Vector3 _playerStartPos;
 
     private int _score;
@@ -47,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        cycles = 1;
+
         SpawnGhosts();
 
         Score = 0;
@@ -59,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (!paused) totalSeconds += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(RestartCycle());
@@ -78,6 +91,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RestartCycle()
     {
+        paused = true;
         StartCoroutine(StartFades());
 
         yield return new WaitForSeconds(1f);
@@ -95,6 +109,8 @@ public class GameManager : MonoBehaviour
 
         _player.transform.position = _playerStartPos;
         _timer.Being(_timer.Duration);
+        cycles++;
+        paused = false;
     }
 
     #endregion
@@ -206,6 +222,21 @@ public class GameManager : MonoBehaviour
             {
                 ghostToReset.SetActive(false);
             }
+
+            int m = (int)totalSeconds / 60;
+            int s = (int)totalSeconds % 60;
+            float ghostsPerCycle = totalGhostsCaught * 1f / cycles;
+            int score = (int)(ghostsPerCycle * 10000f / totalSeconds);
+            _timeTakenUIText.text = m + (s < 10 ? ":0" : ":") + s;
+            _ghostsCaughtPerCycleUIText.text = (int)ghostsPerCycle + "";
+            _finalScoreUIText.text = score + "";
+            if (PlayerPrefs.HasKey("HighScore"))
+            {
+                int highScore = PlayerPrefs.GetInt("HighScore");
+                if (score <= highScore) _personalBestUIText.text = "Personal best: " + highScore;
+                else PlayerPrefs.SetInt("HighScore", score);
+            }
+            else PlayerPrefs.SetInt("HighScore", score);
         }
     }
 

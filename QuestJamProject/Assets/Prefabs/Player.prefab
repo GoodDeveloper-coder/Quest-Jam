@@ -5111,7 +5111,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5d8ba1de18bf19f4684cca566514e94b, type: 3}
   minTimeBetweenFootsteps: 0.3
   maxTimeBetweenFootsteps: 0.6
-  _walkSpeed: 2
+  _walkSpeed: 5
 --- !u!95 &3423594347099724955
 Animator:
   serializedVersion: 5

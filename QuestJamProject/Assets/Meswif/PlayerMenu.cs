@@ -25,8 +25,13 @@ public class PlayerMenu : MonoBehaviour
             s.x *= -1;
             transform.localScale = s;
         }
+        GetComponent<Animator>().SetFloat("Speed", 1f);
         currentGhost = Random.Range(0, ghosts.Length);
-        for (int i = 0; i < ghosts.Length; i++) ghosts[i].SetActive(i == currentGhost);
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            ghosts[i].GetComponent<Animator>().SetFloat("Speed", 1f);
+            ghosts[i].SetActive(i == currentGhost);
+        }
     }
 
     // Update is called once per frame
@@ -42,7 +47,10 @@ public class PlayerMenu : MonoBehaviour
     private IEnumerator Move()
     {
         Vector3 p = transform.position;
-        p.y = Random.Range(-Mathf.Abs(span.y), Mathf.Abs(span.y));
+        float y;
+        do y = Random.Range(-Mathf.Abs(span.y), Mathf.Abs(span.y));
+        while (Mathf.Abs(y - p.y) < Mathf.Abs(span.y) / 4);
+        p.y = y;
         transform.position = p;
         yield return null;
         if (leftToRight)
@@ -71,7 +79,12 @@ public class PlayerMenu : MonoBehaviour
         do r = Random.Range(0, ghosts.Length);
         while (r == currentGhost);
         currentGhost = r;
-        for (int i = 0; i < ghosts.Length; i++) ghosts[i].SetActive(i == currentGhost);
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            ghosts[i].SetActive(true);
+            ghosts[i].GetComponent<Animator>().SetFloat("Speed", 1f);
+            ghosts[i].SetActive(i == currentGhost);
+        }
         moving = false;
     }
 }
