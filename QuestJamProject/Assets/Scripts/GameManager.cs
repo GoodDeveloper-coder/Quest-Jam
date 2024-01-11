@@ -315,31 +315,31 @@ public class GameManager : MonoBehaviour
             switch (ghost._typeOfGhosts)
             {
                 case Ghost.TypesOfGhosts.Anger:
-                    int countOfAngerGhosts;
-                    int.TryParse(_countOfGhostsUIText[0].text, out countOfAngerGhosts);
+                    int _startCountOfAngerGhosts;
+                    int.TryParse(_countOfGhostsUIText[0].text, out _startCountOfAngerGhosts);
 
-                    _countOfGhostsUIText[0].text = $"{countOfAngerGhosts + 1}";
+                    _countOfGhostsUIText[0].text = $"{_startCountOfAngerGhosts + 1}";
                     break;
 
                 case Ghost.TypesOfGhosts.Depression:
-                    int countOfDepressionGhosts;
-                    int.TryParse(_countOfGhostsUIText[1].text, out countOfDepressionGhosts);
+                    int _startCountOfDepressionGhosts;
+                    int.TryParse(_countOfGhostsUIText[1].text, out _startCountOfDepressionGhosts);
 
-                    _countOfGhostsUIText[1].text = $"{countOfDepressionGhosts + 1}";
+                    _countOfGhostsUIText[1].text = $"{_startCountOfDepressionGhosts + 1}";
                     break;
 
                 case Ghost.TypesOfGhosts.Anxiety:
-                    int countOfAnxietyGhosts;
-                    int.TryParse(_countOfGhostsUIText[2].text, out countOfAnxietyGhosts);
+                    int _startCountOfAnxietyGhosts;
+                    int.TryParse(_countOfGhostsUIText[2].text, out _startCountOfAnxietyGhosts);
 
-                    _countOfGhostsUIText[2].text = $"{countOfAnxietyGhosts + 1}";
+                    _countOfGhostsUIText[2].text = $"{_startCountOfAnxietyGhosts + 1}";
                     break;
 
                 case Ghost.TypesOfGhosts.Envy:
-                    int countOfEnvyGhosts;
-                    int.TryParse(_countOfGhostsUIText[3].text, out countOfEnvyGhosts);
+                    int _startCountOfEnvyGhosts;
+                    int.TryParse(_countOfGhostsUIText[3].text, out _startCountOfEnvyGhosts);
 
-                    _countOfGhostsUIText[3].text = $"{countOfEnvyGhosts + 1}";
+                    _countOfGhostsUIText[3].text = $"{_startCountOfEnvyGhosts + 1}";
                     break;
             }
         }

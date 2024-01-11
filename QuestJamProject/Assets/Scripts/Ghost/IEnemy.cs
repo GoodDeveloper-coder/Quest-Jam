@@ -7,7 +7,7 @@ public interface IEnemy
 
     IEnumerator Move();
 
-    void SetGhostFields(Transform suckUpPosition);
+    void SetGhostFields(Transform suckUpPosition, float speedOfSuckUpGhostInVacumCleaner);
 
     void InitializeGhost();
 

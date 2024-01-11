@@ -27,6 +27,10 @@ public class VacumCleaner : MonoBehaviour
 
     [SerializeField] private float _attackCooldown;
 
+    [SerializeField] private float _speedOfSuckUpGhostInVacumCleaner;
+
+    private float _deffaultSpeedOfSuckUpGhostInVacum;
+
     private GameObject _player;
 
     private float GroundCheckRadius = 1.7f;
@@ -59,6 +63,7 @@ public class VacumCleaner : MonoBehaviour
         deffaultPos = _checkGhost.transform.localPosition;
         deffaultScale = _checkGhost.localScale;
         _deffaultAttackCooldown = _attackCooldown;
+        _deffaultSpeedOfSuckUpGhostInVacum = _speedOfSuckUpGhostInVacumCleaner;
     }
 
     void Update()
@@ -108,7 +113,7 @@ public class VacumCleaner : MonoBehaviour
                         IEnemy ghostScript = collider.GetComponent<IEnemy>();
                         if (ghostScript != null)
                         {
-                            ghostScript.SetGhostFields(_ghostSuckUpPos);
+                            ghostScript.SetGhostFields(_ghostSuckUpPos, _speedOfSuckUpGhostInVacumCleaner);
                         }
 
                         StartCoroutine(AttackCooldown());
@@ -168,7 +173,7 @@ public class VacumCleaner : MonoBehaviour
                         break;
 
                     case Ghost.TypesOfGhosts.Depression:
-                        StartCoroutine(_playerMovement.BoostPlayerSpeed(5f, 5f)); // or _playerMovement.StartCoroutine(_playerMovement.BoostPlayerSpeed(7f, 5f));
+                        StartCoroutine(_playerMovement.BoostPlayerSpeed(3f, 5f)); // or _playerMovement.StartCoroutine(_playerMovement.BoostPlayerSpeed(7f, 5f));
                         //increases your walking speed
                         break;
 
@@ -214,9 +219,9 @@ public class VacumCleaner : MonoBehaviour
 
     IEnumerator EnvyGhostEffect()
     {
-
+        _speedOfSuckUpGhostInVacumCleaner += 3f;
         yield return new WaitForSeconds(4f);
-
+        _speedOfSuckUpGhostInVacumCleaner = _deffaultSpeedOfSuckUpGhostInVacum;
     }
 
     #endregion
