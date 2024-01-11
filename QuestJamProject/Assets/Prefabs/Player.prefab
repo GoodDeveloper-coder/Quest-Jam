@@ -4872,6 +4872,7 @@ MonoBehaviour:
     m_Bits: 64
   _checkGhost: {fileID: 6015713804779870886}
   _attackCooldown: 2
+  _speedOfSuckUpGhostInVacumCleaner: 5
   minTimeBetweenVacumCleanerWorkingSound: 0.3
   maxTimeBetweenCleanerWorkingSound: 0.6
 --- !u!61 &488307443043713046
@@ -5111,7 +5112,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5d8ba1de18bf19f4684cca566514e94b, type: 3}
   minTimeBetweenFootsteps: 0.3
   maxTimeBetweenFootsteps: 0.6
-  _walkSpeed: 5
+  _walkSpeed: 4
 --- !u!95 &3423594347099724955
 Animator:
   serializedVersion: 5

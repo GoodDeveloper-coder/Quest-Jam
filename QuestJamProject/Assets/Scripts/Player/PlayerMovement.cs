@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 origin;
     private bool locked;
 
+    private float _defaultWalkSpeed;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -64,7 +66,9 @@ public class PlayerMovement : MonoBehaviour
                 timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound
             }
         }
-        
+
+
+        _defaultWalkSpeed = _walkSpeed;
     }
 
     private void Move(float speed)
@@ -99,10 +103,9 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator BoostPlayerSpeed(float boostSpeed, float time)
     {
-        float defaultSpeed = _walkSpeed;
-        _walkSpeed = boostSpeed;
+        _walkSpeed += boostSpeed;
         yield return new WaitForSeconds(time);
-        _walkSpeed = defaultSpeed;
+        _walkSpeed = _defaultWalkSpeed;
     }
 
     public void FindGhostSound()

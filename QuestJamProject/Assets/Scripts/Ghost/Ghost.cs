@@ -44,6 +44,8 @@ public class Ghost : MonoBehaviour, IEnemy
     private int pathIndex;
     private bool locked;
 
+    private float _speedOfSuckUpInVacum;
+
     #endregion
 
     #region Monobehaviour Functions
@@ -165,7 +167,7 @@ public class Ghost : MonoBehaviour, IEnemy
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, _speedOfSuckUpInVacum * Time.deltaTime);
 
             if (Vector2.Distance(transform.position, _target.transform.position) <= 5f)
             {
@@ -183,10 +185,11 @@ public class Ghost : MonoBehaviour, IEnemy
         //while ((transform.position - _target.transform.position).magnitude > float.Epsilon && !locked) transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
     }
 
-    public void SetGhostFields(Transform suckUpPosition)
+    public void SetGhostFields(Transform suckUpPosition, float speedOfSuckUpGhostInVacumCleaner)
     {
         _target = suckUpPosition;
         _canMove = false;
+        _speedOfSuckUpInVacum = speedOfSuckUpGhostInVacumCleaner;
     }
 
     public Vector3 GetGhostStartPos()

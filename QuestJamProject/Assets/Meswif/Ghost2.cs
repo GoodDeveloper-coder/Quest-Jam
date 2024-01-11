@@ -146,7 +146,7 @@ public class Ghost2 : MonoBehaviour, IEnemy
         while (!caught && !locked) transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 5f * Time.deltaTime);
     }
 
-    public void SetGhostFields(Transform suckUpPosition)
+    public void SetGhostFields(Transform suckUpPosition, float speedOfSuckUpGhostInVacumCleaner)
     {
         _target = suckUpPosition;
         _canMove = false;
