@@ -136,6 +136,8 @@ public class GameManager : MonoBehaviour
     {
         int indexOfPatruleMarshroot = 0;
 
+        int numberInOrder = 1;
+
         foreach (Transform spawnPos in _ghostsSpawnPositions)
         {
             int spawnOrNo = Random.Range(0, 2);
@@ -146,6 +148,29 @@ public class GameManager : MonoBehaviour
 
                 Ghost.TypesOfGhosts typeOfGhost = new Ghost.TypesOfGhosts();
 
+                switch (numberInOrder)
+                {
+                    case 1:
+                        typeOfGhost = Ghost.TypesOfGhosts.Anger;
+                        numberInOrder++;
+                        break;
+
+                    case 2:
+                        typeOfGhost = Ghost.TypesOfGhosts.Depression;
+                        numberInOrder++;
+                        break;
+
+                    case 3:
+                        typeOfGhost = Ghost.TypesOfGhosts.Anxiety;
+                        numberInOrder++;
+                        break;
+
+                    case 4:
+                        typeOfGhost = Ghost.TypesOfGhosts.Envy;
+                        numberInOrder = 1;
+                        break;
+                }
+                /*
                 switch (typeOfGhostInt)
                 {
                     case 0:
@@ -164,7 +189,7 @@ public class GameManager : MonoBehaviour
                         typeOfGhost = Ghost.TypesOfGhosts.Envy;
                         break;
                 }
-
+                */
                 Ghost ghost = Instantiate(_ghostPrefab, spawnPos.position, Quaternion.identity).GetComponent<Ghost>();
                 ghost._typeOfGhosts = typeOfGhost;
 
@@ -191,6 +216,7 @@ public class GameManager : MonoBehaviour
                 indexOfPatruleMarshroot += 2;
 
                 ghost.transform.position = _ghostPatruleMarshroots[indexOfPatruleMarshroot - Random.Range(1, 3)].position;
+
                 ghost._moveSpots.Add(_ghostPatruleMarshroots[indexOfPatruleMarshroot - 2]);
                 ghost._moveSpots.Add(_ghostPatruleMarshroots[indexOfPatruleMarshroot - 1]);
 
