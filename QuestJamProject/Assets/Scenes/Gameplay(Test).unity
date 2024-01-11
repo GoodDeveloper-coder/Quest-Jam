@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 54166945}
   - component: {fileID: 54166947}
   - component: {fileID: 54166946}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_60 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 153299540}
   - component: {fileID: 153299542}
   - component: {fileID: 153299541}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_58 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1754,7 +1754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187181547}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Tables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1863,7 +1863,7 @@ GameObject:
   - component: {fileID: 232372604}
   - component: {fileID: 232372606}
   - component: {fileID: 232372605}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_14 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1973,7 +1973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243256429}
   - component: {fileID: 243256430}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_68 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3459,7 +3459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466217331}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TablesWithPanels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3647,7 +3647,7 @@ GameObject:
   - component: {fileID: 508424625}
   - component: {fileID: 508424627}
   - component: {fileID: 508424626}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21465,7 +21465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 719828957}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Closets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21578,7 +21578,7 @@ GameObject:
   - component: {fileID: 733474156}
   - component: {fileID: 733474158}
   - component: {fileID: 733474157}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_42 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22330,7 +22330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 820672278}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GreenCapsules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22367,7 +22367,7 @@ GameObject:
   - component: {fileID: 823636246}
   - component: {fileID: 823636248}
   - component: {fileID: 823636247}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22798,7 +22798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 876704825}
   - component: {fileID: 876704826}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23415,7 +23415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 989243268}
   - component: {fileID: 989243269}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23703,7 +23703,7 @@ GameObject:
   - component: {fileID: 1014625943}
   - component: {fileID: 1014625945}
   - component: {fileID: 1014625944}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_42 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25430,7 +25430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251606558}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Panels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26154,7 +26154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1300256720}
   - component: {fileID: 1300256721}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_71
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27326,7 +27326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1439222848}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: MiniThings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28276,7 +28276,7 @@ GameObject:
   - component: {fileID: 1528529164}
   - component: {fileID: 1528529166}
   - component: {fileID: 1528529165}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_58 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29088,7 +29088,7 @@ GameObject:
   - component: {fileID: 1600688238}
   - component: {fileID: 1600688240}
   - component: {fileID: 1600688239}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_60 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29283,7 +29283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620542242}
   - component: {fileID: 1620542243}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_66 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29479,7 +29479,7 @@ GameObject:
   - component: {fileID: 1622658829}
   - component: {fileID: 1622658831}
   - component: {fileID: 1622658830}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_60 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29802,7 +29802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1736656132}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Panels(Version2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30102,7 +30102,7 @@ GameObject:
   - component: {fileID: 1770597628}
   - component: {fileID: 1770597630}
   - component: {fileID: 1770597629}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30117,7 +30117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770597627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.18, y: 2.37, z: -263.02383}
+  m_LocalPosition: {x: 7.26, y: 1.9, z: -263.02383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30342,7 +30342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1833848938}
   - component: {fileID: 1833848939}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30538,7 +30538,7 @@ GameObject:
   - component: {fileID: 1862715285}
   - component: {fileID: 1862715287}
   - component: {fileID: 1862715286}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_42 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30864,7 +30864,7 @@ GameObject:
   - component: {fileID: 1922704914}
   - component: {fileID: 1922704916}
   - component: {fileID: 1922704915}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_58
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31376,7 +31376,7 @@ GameObject:
   - component: {fileID: 2014481079}
   - component: {fileID: 2014481081}
   - component: {fileID: 2014481080}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31867,7 +31867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2101430293}
   - component: {fileID: 2101430294}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_71 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31952,7 +31952,7 @@ GameObject:
   - component: {fileID: 2108111438}
   - component: {fileID: 2108111440}
   - component: {fileID: 2108111439}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: tilesStuff_60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32172,7 +32172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129423396}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Closets(Version2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
