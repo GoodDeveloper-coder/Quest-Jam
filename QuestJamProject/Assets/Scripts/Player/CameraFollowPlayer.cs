@@ -21,8 +21,8 @@ public class CameraFollowPlayer : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.SmoothDamp(transform.position, _target.transform.position, ref _velocity, _smoothTime);
-            transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+            Vector3 camFollowPlayer = Vector3.SmoothDamp(transform.position, _target.transform.position, ref _velocity, _smoothTime);
+            transform.position = new Vector3(camFollowPlayer.x, camFollowPlayer.y, transform.position.z);
         }
     }
 }
