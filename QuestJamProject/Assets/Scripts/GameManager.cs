@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int _score;
 
+    [SerializeField] private List<GameObject> _spawnedGhosts;
+
     public int Score
     {
         get
@@ -95,7 +97,124 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartFades());
 
         yield return new WaitForSeconds(1f);
-        
+
+        #region Update
+
+        int countOfAngerGhosts = 0;
+
+        int countOfDepressionGhosts = 0;
+
+        int countOfAnxietyGhosts = 0;
+
+        int countOfEnvyGhosts = 0;
+
+        GameObject[] _ghosts = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject ghost in _ghosts)
+        {
+            Ghost ghostScript = ghost.GetComponent<Ghost>();
+
+            if (ghostScript != null)
+            {
+                switch (ghostScript._typeOfGhosts)
+                {
+                    case Ghost.TypesOfGhosts.Anger:
+                        countOfAngerGhosts++;
+                        break;
+
+                    case Ghost.TypesOfGhosts.Depression:
+                        countOfDepressionGhosts++;
+                        break;
+
+                    case Ghost.TypesOfGhosts.Anxiety:
+                        countOfAnxietyGhosts++;
+                        break;
+
+                    case Ghost.TypesOfGhosts.Envy:
+                        countOfEnvyGhosts++;
+                        break;
+                }
+            }
+        }
+
+        if (countOfAngerGhosts <= 0)
+        {
+
+        }
+        else
+        {
+            foreach (GameObject ghost in _spawnedGhosts)
+            {
+                Ghost ghostScript = ghost.GetComponent<Ghost>();
+
+                switch (ghostScript._typeOfGhosts)
+                {
+                    case Ghost.TypesOfGhosts.Anger:
+                        ghost.SetActive(true);
+                        break;
+                }
+            }
+        }
+
+        if (countOfDepressionGhosts <= 0)
+        {
+
+        }
+        else
+        {
+            foreach (GameObject ghost in _spawnedGhosts)
+            {
+                Ghost ghostScript = ghost.GetComponent<Ghost>();
+
+                switch (ghostScript._typeOfGhosts)
+                {
+                    case Ghost.TypesOfGhosts.Depression:
+                        ghost.SetActive(true);
+                        break;
+                }
+            }
+        }
+
+        if (countOfAnxietyGhosts <= 0)
+        {
+
+        }
+        else
+        {
+            foreach (GameObject ghost in _spawnedGhosts)
+            {
+                Ghost ghostScript = ghost.GetComponent<Ghost>();
+
+                switch (ghostScript._typeOfGhosts)
+                {
+                    case Ghost.TypesOfGhosts.Anxiety:
+                        ghost.SetActive(true);
+                        break;
+                }
+            }
+        }
+
+        if (countOfEnvyGhosts <= 0)
+        {
+
+        }
+        else
+        {
+            foreach (GameObject ghost in _spawnedGhosts)
+            {
+                Ghost ghostScript = ghost.GetComponent<Ghost>();
+
+                switch (ghostScript._typeOfGhosts)
+                {
+                    case Ghost.TypesOfGhosts.Envy:
+                        ghost.SetActive(true);
+                        break;
+                }
+            }
+        }
+
+        #endregion
+
         GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (GameObject ghost in ghosts)
@@ -111,6 +230,8 @@ public class GameManager : MonoBehaviour
         _timer.Being(_timer.Duration);
         cycles++;
         paused = false;
+
+        SetUICountOfGhosts();
     }
 
     #endregion
@@ -221,6 +342,8 @@ public class GameManager : MonoBehaviour
                 ghost._moveSpots.Add(_ghostPatruleMarshroots[indexOfPatruleMarshroot - 1]);
 
                 ghost.InitializeGhost();
+
+                _spawnedGhosts.Add(ghost.transform.gameObject);
             }
         }
     } 
@@ -308,6 +431,10 @@ public class GameManager : MonoBehaviour
 
     void SetUICountOfGhosts()
     {
+        int _startCountOfAngerGhosts = 0;
+        int _startCountOfDepressionGhosts = 0;
+        int _startCountOfAnxietyGhosts = 0;
+        int _startCountOfEnvyGhosts = 0;
 
         Ghost[] allGhosts = GameObject.FindObjectsOfType<Ghost>();
         foreach (Ghost ghost in allGhosts)
@@ -315,31 +442,35 @@ public class GameManager : MonoBehaviour
             switch (ghost._typeOfGhosts)
             {
                 case Ghost.TypesOfGhosts.Anger:
-                    int _startCountOfAngerGhosts;
-                    int.TryParse(_countOfGhostsUIText[0].text, out _startCountOfAngerGhosts);
+                    //int _startCountOfAngerGhosts = 0;
+                    //int.TryParse(_countOfGhostsUIText[0].text, out _startCountOfAngerGhosts);
 
                     _countOfGhostsUIText[0].text = $"{_startCountOfAngerGhosts + 1}";
+                    _startCountOfAngerGhosts++;
                     break;
 
                 case Ghost.TypesOfGhosts.Depression:
-                    int _startCountOfDepressionGhosts;
-                    int.TryParse(_countOfGhostsUIText[1].text, out _startCountOfDepressionGhosts);
+                    //int _startCountOfDepressionGhosts = 0;
+                    //int.TryParse(_countOfGhostsUIText[1].text, out _startCountOfDepressionGhosts);
 
                     _countOfGhostsUIText[1].text = $"{_startCountOfDepressionGhosts + 1}";
+                    _startCountOfDepressionGhosts++;
                     break;
 
                 case Ghost.TypesOfGhosts.Anxiety:
-                    int _startCountOfAnxietyGhosts;
-                    int.TryParse(_countOfGhostsUIText[2].text, out _startCountOfAnxietyGhosts);
+                    //int _startCountOfAnxietyGhosts = 0;
+                    //int.TryParse(_countOfGhostsUIText[2].text, out _startCountOfAnxietyGhosts);
 
                     _countOfGhostsUIText[2].text = $"{_startCountOfAnxietyGhosts + 1}";
+                    _startCountOfAnxietyGhosts++;
                     break;
 
                 case Ghost.TypesOfGhosts.Envy:
-                    int _startCountOfEnvyGhosts;
-                    int.TryParse(_countOfGhostsUIText[3].text, out _startCountOfEnvyGhosts);
+                    //int _startCountOfEnvyGhosts = 0;
+                    //int.TryParse(_countOfGhostsUIText[3].text, out _startCountOfEnvyGhosts);
 
                     _countOfGhostsUIText[3].text = $"{_startCountOfEnvyGhosts + 1}";
+                    _startCountOfEnvyGhosts++;
                     break;
             }
         }
