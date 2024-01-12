@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         Score += score;
+        totalGhostsCaught++;
     }
 
     #region Restart Cycle
