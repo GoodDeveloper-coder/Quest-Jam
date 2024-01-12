@@ -252,17 +252,17 @@ public class GameManager : MonoBehaviour
             int m = (int)totalSeconds / 60;
             int s = (int)totalSeconds % 60;
             float ghostsPerCycle = totalGhostsCaught * 1f / cycles;
-            int score = (int)(ghostsPerCycle * 10000f / totalSeconds);
+            Score = (int)(ghostsPerCycle * 10000f / totalSeconds);
             _timeTakenUIText.text = m + (s < 10 ? ":0" : ":") + s;
             _ghostsCaughtPerCycleUIText.text = (int)ghostsPerCycle + "";
-            _finalScoreUIText.text = score + "";
+            _finalScoreUIText.text = Score + "";
             if (PlayerPrefs.HasKey("HighScore"))
             {
                 int highScore = PlayerPrefs.GetInt("HighScore");
-                if (score <= highScore) _personalBestUIText.text = "Personal best: " + highScore;
-                else PlayerPrefs.SetInt("HighScore", score);
+                if (Score <= highScore) _personalBestUIText.text = "Personal best: " + highScore;
+                else PlayerPrefs.SetInt("HighScore", Score);
             }
-            else PlayerPrefs.SetInt("HighScore", score);
+            else PlayerPrefs.SetInt("HighScore", Score);
         }
     }
 
