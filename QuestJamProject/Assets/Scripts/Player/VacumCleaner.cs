@@ -190,7 +190,8 @@ public class VacumCleaner : MonoBehaviour
                 }
 
                 //StartCoroutine(AttackCooldown());
-                Destroy(ghost.gameObject);
+                //Destroy(ghost.gameObject);
+                ghost.gameObject.SetActive(false);
                 _soundManager.PlayGhostCaughtSound();
                 _gameManager.AddScore(5);
                 _gameManager.UpdateUICountOfGhosts(ghost._typeOfGhosts);
