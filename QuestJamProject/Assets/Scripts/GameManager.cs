@@ -354,10 +354,13 @@ public class GameManager : MonoBehaviour
 
     void CheckPlayerWin()
     {
+        if (paused) return;
+
         GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Enemy");
 
         if (ghosts.Count() == 0)
         {
+            paused = true;
             foreach(GameObject winObject in _objectToOpenIfWin) 
             {
                 winObject.SetActive(true);
